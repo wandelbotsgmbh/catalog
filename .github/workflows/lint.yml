@@ -1,0 +1,40 @@
+---
+name: Check Catalog Manifests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint-yaml:
+    name: Lint YAML
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - uses: docker://cytopia/yamllint:latest
+        with:
+          args: -d .yamllint .
+
+  validate-yaml:
+    name: Validate YAML against JSON Schema
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Golang
+        uses: actions/setup-go@v5
+
+      - name: Install JSON Validator
+        run: go install github.com/santhosh-tekuri/jsonschema/cmd/jv@latest
+
+      - name: Validate YAML
+        run: |
+          for file in catalog/*/manifest.yaml; do
+            jv schema.json "$file" || exit 1
+          done

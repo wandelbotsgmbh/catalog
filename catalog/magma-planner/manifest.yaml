@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema.json
+---
+version: 0.0.26
+name: magma-planner
+description: |
+  Trajectory-optimization based planner for multiple motion groups.
+  The main goal is to support path planning for external axis.
+homepage: https://wandelbots.com/
+app:
+  name: magma-planner
+  appIcon: app_icon.png
+  containerImage:
+    image: docker.io/wandelbotsgmbh/magma-planner:0.0.26
+    secrets:
+      - name: pull-secret-registry-1-docker-io
+      - name: pull-secret-registry-code-wabo-run
+  port: 8080

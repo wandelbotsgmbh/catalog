@@ -1,0 +1,101 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.com/wandelbotsgmbh/catalog/schema.json",
+    "title": "Catalog Entry",
+    "description": "An entry in the wandelbots catalog",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "Name of the entry (e.g. the name of the app). Should be unique in the catalog.",
+            "type": "string"
+        },
+        "description": {
+            "description": "Description of the entry.",
+            "type": "string"
+        },
+        "version": {
+            "description": "Version of the entry (e.g app version).",
+            "type": "string"
+        },
+        "homepage": {
+            "description": "URL to the homepage or github repository with detailed information.",
+            "type": "string"
+        },
+        "app": {
+            "description": "Specification for the app deployment",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "Name of the app (should be unique in catalog)",
+                    "type": "string"
+                },
+                "appIcon": {
+                    "description": "relative URL path to the app icon (e.g. icon served at '/app_icon.png' is simple 'app_icon.png')",
+                    "type": "string"
+                },
+                "port": {
+                    "description": "Port on which the app is getting exposed from the container",
+                    "type": "integer"
+                },
+                "containerImage": {
+                    "description": "Details for the container image",
+                    "type": "object",
+                    "properties": {
+                        "image": {
+                            "description": "Full image name (e.g. docker.io/wandelbotsgmbh/jupyter:0.0.4)",
+                            "type": "string"
+                        },
+                        "secrets": {
+                            "description": "List of secret identifiers available in the nova instance. This is not required for public available images.",
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "description": "Name of the secret",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "name"
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "image"
+                    ]
+                }
+            },
+            "required": [
+                "name",
+                "appIcon",
+                "port",
+                "containerImage"
+            ]
+        },
+        "dependencies": {
+            "description": "List of dependencies for the app",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "Name of the catalog entry",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name"
+                ]
+            }
+        }
+    },
+    "required": [
+        "name",
+        "description",
+        "version",
+        "homepage",
+        "app"
+    ]
+}
