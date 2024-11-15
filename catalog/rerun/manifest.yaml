@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../../schema.json
+---
+version: 0.0.1
+name: rerun
+description: |
+  The multimodal data stack
+  Open source log handling and visualization for spatial and embodied AI. 
+  Managed infrastructure to ingest, store, analyze, and stream data at scale with built-in visual debugging. 
+  Fast, flexible, and easy to use.
+homepage: https://rerun.io/
+app:
+  name: rerun
+  appIcon: app_icon.png
+  containerImage:
+    image: andiikaa/rerun:0.0.1
+    secrets:
+      - name: pull-secret-registry-1-docker-io
+      - name: pull-secret-registry-code-wabo-run
+  port: 3001
