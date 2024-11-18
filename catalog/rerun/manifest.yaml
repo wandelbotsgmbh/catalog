@@ -12,7 +12,7 @@ app:
   name: rerun
   appIcon: app_icon.png
   containerImage:
-    image: andiikaa/rerun:0.0.1
+    image: andiikaa/rerun:0.0.2
     secrets:
       - name: pull-secret-registry-1-docker-io
       - name: pull-secret-registry-code-wabo-run
