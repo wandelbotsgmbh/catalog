@@ -1,0 +1,22 @@
+---
+name: Build Catalog
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint-yaml:
+    name: Build Catalog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Install Golang
+        uses: actions/setup-go@v5
+      - name: create catalog manifest
+        run: go run hack/create_catalog.go
