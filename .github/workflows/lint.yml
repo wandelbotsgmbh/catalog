@@ -1,7 +1,7 @@
 ---
 name: Check Catalog Manifests
 
-on: # yamllint disable-line rule:truthy
+on:  # yamllint disable-line rule:truthy
   push:
     branches:
       - main
