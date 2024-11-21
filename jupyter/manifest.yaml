@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../../schema.json
+---
+version: 0.0.4
+name: jupyter
+description: |
+    Jupyter is a free, open-source, interactive web tool known as a computational notebook,
+    which researchers can use to combine software code, computational output,
+    explanatory text and multimedia resources in a single document.
+homepage: https://jupyter.org/
+app:
+    name: jupyter
+    appIcon: app_icon.png
+    containerImage:
+        image: docker.io/wandelbotsgmbh/jupyter:0.0.4
+        secrets:
+            - name: pull-secret-registry-1-docker-io
+            - name: pull-secret-registry-code-wabo-run
+    port: 3000
