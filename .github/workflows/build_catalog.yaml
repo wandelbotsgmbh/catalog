@@ -9,6 +9,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   lint-yaml:
     name: Build Catalog
@@ -16,7 +19,15 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+
       - name: Install Golang
         uses: actions/setup-go@v5
-      - name: create catalog manifest
+
+      - name: Create Catalog Manifest
         run: go run hack/create_catalog.go
+
+      - name: Deploy To gh-pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          folder: catalog
