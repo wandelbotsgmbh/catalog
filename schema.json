@@ -65,6 +65,24 @@
                     "required": [
                         "image"
                     ]
+                },
+                "storage": {
+                    "description": "The path and capacity of a volume that retains data across application restarts. The maximal requestable capacity is 300Mi",
+                    "type": "object",
+                    "properties": {
+                        "mountPath": {
+                            "description": "Path where the storage should be mounted in the container",
+                            "type": "string"
+                        },
+                        "capacity": {
+                            "description": "The amount of local storage available for the application. Example: 100Mi NOTE: The capacity can NEVER be reduced!.",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "mountPath",
+                        "capacity"
+                    ]
                 }
             },
             "required": [
