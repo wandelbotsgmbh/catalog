@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.0.1
+version: 0.0.13
 name: zivid-intel
 description: "Driver for Zivid cameras. (For Systems with Intel GPU)"
 homepage: https://www.zivid.com/
@@ -8,12 +8,9 @@ app:
   name: zivid-intel
   appIcon: app_icon.png
   containerImage:
-    # yamllint disable rule:line-length
-    image: registry.code.wabo.run/ai/zivid-nova/zivid-nova:0.0.10-dirty@sha256:5c1ae7701385a7405a9d5e47743b2d2a39c9523f09c89e7db97db65bfe9abead
-    # yamllint enable
+    image: wandelbots.azurecr.io/nova-services/zivid-nova:0.0.13
     secrets:
-      - name: pull-secret-registry-1-docker-io
-      - name: pull-secret-registry-code-wabo-run
+      - name: pull-secret-wandelbots-azurecr-io
   port: 8080
   resources:
     intel-gpu: 1
