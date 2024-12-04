@@ -16,5 +16,4 @@ app:
       - name: pull-secret-registry-code-wabo-run
   port: 8080
   resources:
-    limits:
-      gpu.intel.com/i915: 1
+    intel-gpu: 1
