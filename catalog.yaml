@@ -6,13 +6,7 @@ entries:
       version: 0.0.8
     - name: jupyter
       version: 0.0.4
-    - name: magma-planner
-      version: 0.0.26
-    - name: palletizing-planner
-      version: 0.0.7
     - name: rerun
       version: 0.0.1
-    - name: snake-planner
-      version: 0.0.56
     - name: zivid-intel
       version: 0.0.13
