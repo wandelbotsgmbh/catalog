@@ -12,5 +12,4 @@ app:
     image: docker.io/wandelbotsgmbh/snake-planner:0.0.56
     secrets:
       - name: pull-secret-registry-1-docker-io
-      - name: pull-secret-registry-code-wabo-run
   port: 8080

@@ -14,7 +14,5 @@ app:
   containerImage:
     image: wandelbots.azurecr.io/nova-apps/rerun:0.0.21
     secrets:
-      - name: pull-secret-registry-1-docker-io
       - name: pull-secret-wandelbots-azurecr-io
-      - name: pull-secret-registry-code-wabo-run
   port: 3001
