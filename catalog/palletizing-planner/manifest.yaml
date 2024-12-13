@@ -11,5 +11,4 @@ app:
     image: docker.io/wandelbotsgmbh/palletizing-planner:0.0.7
     secrets:
       - name: pull-secret-registry-1-docker-io
-      - name: pull-secret-registry-code-wabo-run
   port: 3000
