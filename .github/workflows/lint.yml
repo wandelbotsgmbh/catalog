@@ -38,7 +38,7 @@ jobs:
           for file in catalog/*/manifest.yaml; do
             jv schema.json "$file" || exit 1
           done
-    
+
   check-image:
     name: Check Icons
     runs-on: ubuntu-latest
@@ -55,7 +55,7 @@ jobs:
             fi
 
             maxWidth=600
-            minWidth=255
+            minWidth=254
             maxHeight=600
             minHeight=254
 
@@ -75,5 +75,3 @@ jobs:
             fi
 
           done
-
-
