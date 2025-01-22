@@ -38,3 +38,40 @@ jobs:
           for file in catalog/*/manifest.yaml; do
             jv schema.json "$file" || exit 1
           done
+
+  check-image:
+    name: Check Icons
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Check Icon Existence And Sizes
+        run: |
+          for dir in catalog/*/; do
+            if [ ! -f "${dir}icon.png" ]; then
+              echo "Error: ${dir} is missing icon.png"
+              exit 1
+            fi
+
+            maxWidth=600
+            minWidth=254
+            maxHeight=600
+            minHeight=254
+
+            out=$(file "${dir}icon.png")
+            dimensions=$(echo "$out" | grep -o '[0-9]* x [0-9]*')
+            width=$(echo "$dimensions" | cut -d'x' -f1 | tr -d ' ')
+            height=$(echo "$dimensions" | cut -d'x' -f2 | tr -d ' ')
+
+            if [ "$width" -lt $minWidth ] || [ "$height" -lt $minHeight ]; then
+              echo "Error: ${dir}icon.png is too small (${width}x${height}). Minimum size is 400x400"
+              exit 1
+            fi
+
+            if [ "$width" -gt $maxWidth ] || [ "$height" -gt $maxHeight ]; then
+              echo "Error: ${dir}icon.png is too large (${width}x${height}). Maximum size is 600x600"
+              exit 1
+            fi
+
+          done
