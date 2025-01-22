@@ -15,6 +15,13 @@ Please make sure the secrets are available per default in the nova instance.
 Any service you provide should be able to handle a `BASE_PATH` environment variable, which gets injected into your container during runtime.
 This tells your service the actual URI (e.g. `BASE_PATH=cellname/appname` for `instance.wandelbots.io/cellname/appname`).
 
+### Structure
+
+* `catalog` is the folder, where all available entries are added
+    * `catalog/your-app-name/` is the folder for your app
+    * `catalog/your-app-name/manifest.yaml` is the manifest for the entry, which follows [schema.json](schema.json)
+    * `catalog/your-app-name/icon.png` icon which will be shown in graphical app managers
+
 ## Linting
 
 ### YAML linting
