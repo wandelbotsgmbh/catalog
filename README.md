@@ -45,4 +45,15 @@ go install github.com/santhosh-tekuri/jsonschema/cmd/jv@latest
 find catalog/*/manifest.yaml -exec sh -c 'jv schema.json {}' \;
 ```
 
+## Updating Version And Image For Existing Entries
 
+If you want to have your CI to publish new versions to the existing catalog entries, 
+one could use [yq](https://github.com/mikefarah/yq)
+
+```bash
+# update the image
+$ yq -i -I4 '.app.containerImage.image = "someimage:123"' catalog/doom/manifest.yaml
+
+# update the version 
+$ yq -i -I4 '.version = "1.2.3"' catalog/doom/manifest.yaml
+```
