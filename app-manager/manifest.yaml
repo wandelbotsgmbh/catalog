@@ -13,4 +13,4 @@ app:
     image: wandelbots.azurecr.io/nova-apps/app-manager:1.5.0
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
-  port: 3001
+  port: 3000
