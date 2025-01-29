@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 1.6.0
+version: 1.7.0
 name: App Manager
 description: |
   Nova App Manager enables easy installation and management of applications on Nova instances.
@@ -10,7 +10,7 @@ app:
   name: app-manager
   appIcon: app_icon.png
   containerImage:
-    image: wandelbots.azurecr.io/nova-apps/app-manager:1.6.0
+    image: wandelbots.azurecr.io/nova-apps/app-manager:1.7.0
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
   port: 3000
