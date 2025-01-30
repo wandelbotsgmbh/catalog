@@ -9,6 +9,6 @@ entries:
     - name: jupyter
       version: 0.0.4
     - name: rerun
-      version: 0.22.4
+      version: 0.22.3
     - name: zivid-intel
       version: 0.0.13
