@@ -3,7 +3,8 @@
 version: 0.22.1
 name: rerun
 description: |
-  A visualization extension for wandelbots-nova that enables real-time 3D visualization of robot trajectories using rerun.io.
+  A visualization extension for wandelbots-nova that enables 
+  real-time 3D visualization of robot trajectories using rerun.io.
 homepage: https://github.com/wandelbotsgmbh/nova-rerun-bridge
 app:
   name: rerun
