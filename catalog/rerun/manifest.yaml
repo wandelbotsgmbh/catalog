@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.22.4
+version: 0.22.3
 name: rerun
 description: |
   A visualization extension for wandelbots-nova that enables
@@ -10,7 +10,7 @@ app:
   name: rerun
   appIcon: app_icon.png
   containerImage:
-    image: wandelbots.azurecr.io/nova-apps/rerun:0.22.4
+    image: wandelbots.azurecr.io/nova-apps/rerun:0.22.3
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
   port: 3001
