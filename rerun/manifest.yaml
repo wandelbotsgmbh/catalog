@@ -1,18 +1,20 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.21.0
+version: 0.22.0
 name: rerun
 description: |
-  The multimodal data stack
-  Open source log handling and visualization for spatial and embodied AI.
-  Managed infrastructure to ingest, store, analyze, and stream data at scale with built-in visual debugging.
-  Fast, flexible, and easy to use.
-homepage: https://rerun.io/
+  A visualization extension for wandelbots-nova that enables real-time 3D visualization of robot trajectories using rerun.io.
+  - Real-time 3D robot visualization (see a list of supported robots)
+  - Trajectory playback and analysis
+  - Collision scene visualization
+  - Motion timing analysis
+  - Continuous monitoring mode
+homepage: https://github.com/wandelbotsgmbh/nova-rerun-bridge
 app:
   name: rerun
   appIcon: app_icon.png
   containerImage:
-    image: wandelbots.azurecr.io/nova-apps/rerun:0.21.0
+    image: wandelbots.azurecr.io/nova-apps/rerun:0.22.0
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
   port: 3001
