@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 1.8.3
+version: 1.8.4
 name: App Store
 description: |
   Nova App Store enables easy installation and management of applications on Nova instances.
@@ -10,7 +10,7 @@ app:
   name: app-store
   appIcon: app_icon.png
   containerImage:
-    image: wandelbots.azurecr.io/nova-apps/app-store:1.8.3
+    image: wandelbots.azurecr.io/nova-apps/app-store:1.8.4
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
   port: 3000
