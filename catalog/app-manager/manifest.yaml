@@ -1,16 +1,16 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 1.7.0
-name: App Manager
+version: 1.8.3
+name: App Store
 description: |
-  Nova App Manager enables easy installation and management of applications on Nova instances.
+  Nova App Store enables easy installation and management of applications on Nova instances.
   Provides a centralized way to deploy, update and remove apps while handling dependencies.
 homepage: https://wandelbots.com/
 app:
   name: app-manager
   appIcon: app_icon.png
   containerImage:
-    image: wandelbots.azurecr.io/nova-apps/app-manager:1.7.0
+    image: wandelbots.azurecr.io/nova-apps/app-manager:1.8.3
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
   port: 3000
