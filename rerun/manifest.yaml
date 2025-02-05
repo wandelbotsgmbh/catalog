@@ -1,19 +1,22 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.27.4
+version: 0.29.1
 name: rerun
 description: |
-  A visualization extension for wandelbots-nova that enables
-  real-time 3D visualization of robot trajectories using rerun.io.
-homepage: https://github.com/wandelbotsgmbh/nova-rerun-bridge
+  Rerun is building the multimodal data stack to model, 
+  ingest, store, query and view robotics-style data. 
+  It's used in areas like robotics, spatial and embodied AI, 
+  generative media, industrial processing, simulation, security, 
+  and health.
+
+  Use this app together with the nova-rerun-bridge app to see 
+  planned motions of this nova instance.
+homepage: https://rerun.io/
 app:
   name: rerun
   appIcon: app_icon.png
   containerImage:
-    image: wandelbots.azurecr.io/nova-apps/rerun:0.27.4
+    image: wandelbots.azurecr.io/nova-apps/rerun:0.29.1
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
   port: 3001
-  storage:
-    mountPath: /app/data
-    capacity: 120Mi
