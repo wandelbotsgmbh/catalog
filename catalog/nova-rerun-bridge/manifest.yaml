@@ -3,8 +3,8 @@
 version: 0.29.1
 name: nova-rerun-bridge
 description: |
-  Collects all planned motions and serves a rrd file which can 
-  viewed with rerun. Install the rerun app to see the content of this 
+  Collects all planned motions and serves a rrd file which can
+  viewed with rerun. Install the rerun app to see the content of this
   file directly in the browser.
 homepage: https://github.com/wandelbotsgmbh/nova-rerun-bridge
 app:
