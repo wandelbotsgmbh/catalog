@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=../../schema.json
+---
+version: 0.0.1
+name: magma-p2p
+description: |
+  Plans p2p movements with certain properties, for example collision free.
+homepage: https://wandelbots.com
+app:
+  name: magma-p2p
+  appIcon: app_icon.png
+  containerImage:
+    image: wandelbots.azurecr.io/nova-apps/magma-p2p:0.0.1
+    secrets:
+      - name: pull-secret-wandelbots-azurecr-io
+  port: 8080
