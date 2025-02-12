@@ -53,7 +53,7 @@ jobs:
         with:
           cmd: |
             yq -i -I4 '.app.containerImage.image = strenv(IMAGE)' ${MANIFEST_PATH} && \
-            yq -i -I4 '.version = strenv(VERSION)' ${MANIFEST_PATH}"
+            yq -i -I4 '.version = strenv(VERSION)' ${MANIFEST_PATH}
 
       - name: Print Changes
         run: |
