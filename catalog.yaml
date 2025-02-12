@@ -13,4 +13,4 @@ entries:
     - name: rerun
       version: 0.29.1
     - name: zivid-intel
-      version: 0.0.13
+      version: 1.0.0
