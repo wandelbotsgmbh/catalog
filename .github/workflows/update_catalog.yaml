@@ -11,23 +11,45 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+    env:
+      ENTRY: ${{ github.event.client_payload.entry }}
+      VERSION: ${{ github.event.client_payload.version }}
+      IMAGE: ${{ github.event.client_payload.image }}
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Verify Parameters
+        run: |
+          echo "check version: ${{ github.event.client_payload.version }}"
+          echo "Version: ${VERSION}"
+          echo "Entry: ${ENTRY}"
+          echo "Image: ${IMAGE}"
+          
+          if [ -z "${VERSION}" ]; then
+            echo "missing field 'version'"
+            exit 1
+          fi
+
+          if [ -z "${ENTRY}" ]; then
+            echo "missing field 'entry'"
+            exit 1
+          fi
+
+          if [ -z "${IMAGE}" ]; then
+            echo "missing field 'image'"
+            exit 1
+          fi
 
       - name: Set Entry Version And Image
         uses: mikefarah/yq@master
         with:
           cmd: |
-            VERSION="${{ github.event.client_payload.version }}"
-            ENTRY="${{ github.event.client_payload.entry }}"
-            IMAGE="${{ github.event.client_payload.image }}"
             yq -i -I4 '.app.containerImage.image = "${IMAGE}"' catalog/${ENTRY}/manifest.yaml \
             && yq -i -I4 '.version = "${VERSION}"' catalog/${ENTRY}/manifest.yaml
 
       - name: Print Changes
         run: |
-          ENTRY="${{ github.event.client_payload.entry }}"
           cat catalog/${ENTRY}/manifest.yaml
 
       # - name: Create PR
