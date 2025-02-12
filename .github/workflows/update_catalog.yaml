@@ -21,7 +21,6 @@ jobs:
 
       - name: Verify Parameters
         run: |
-          echo "check version: ${{ github.event.client_payload.version }}"
           echo "Version: ${VERSION}"
           echo "Entry: ${ENTRY}"
           echo "Image: ${IMAGE}"
@@ -45,8 +44,8 @@ jobs:
         uses: mikefarah/yq@master
         with:
           cmd: |
-            yq -i -I4 ".app.containerImage.image = \"${IMAGE}\"" catalog/${ENTRY}/manifest.yaml \
-            && yq -i -I4 ".version = \"${VERSION}\"" catalog/${ENTRY}/manifest.yaml
+            yq -i -I4 ".app.containerImage.image = \"${IMAGE}\"" "catalog/${ENTRY}/manifest.yaml" \
+            && yq -i -I4 ".version = \"${VERSION}\"" "catalog/${ENTRY}/manifest.yaml"
 
       - name: Print Changes
         run: |
