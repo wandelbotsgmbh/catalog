@@ -59,21 +59,20 @@ jobs:
         run: |
           cat ${MANIFEST_PATH}
 
-      # - name: Create PR
-      #   env:
-      #     GH_TOKEN: ${{ github.token }}
-      #   run: |
-      #     VERSION="${{ github.event.client_payload.version }}"
-      #     ENTRY="${{ github.event.client_payload.entry }}"
-      #     BRANCH="feature/update-${ENTRY}-to-${VERSION}"
-      #     git checkout -b $BRANCH
+      - name: Create PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BRANCH="feature/update-${ENTRY}-to-${VERSION}"
 
-      #     git config user.name "github-actions[bot]"
-      #     git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      #     git add catalog/${ENTRY}/manifest.yaml
-      #     git commit -m "Update ${ENTRY} to ${VERSION}"
-      #     git push -u origin $BRANCH
+          git checkout -b $BRANCH
 
-      #     gh pr create --title "Update ${ENTRY} to ${VERSION}" --body "Automated PR from ${ENTRY} release" --base main
-      #     gh pr merge --squash --auto
+          git add catalog/${ENTRY}/manifest.yaml
+          git commit -m "Update ${ENTRY} to ${VERSION}"
+          git push -u origin $BRANCH
+
+          gh pr create --title "Update ${ENTRY} to ${VERSION}" --body "Automated PR from ${ENTRY} release" --base main
+          gh pr merge --squash --auto
