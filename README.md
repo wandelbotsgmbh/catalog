@@ -91,5 +91,5 @@ The following shows an example on how to update the catalog from github actions:
           git commit -m "Update Zivid to ${{ steps.release.outputs.version }}"
           git push -u origin feature/update-zivid-nova-to-${{ steps.release.outputs.version }}
           gh pr create --fill
-          gp pr merge --squash --auto
+          gh pr merge --squash --auto
 ```
