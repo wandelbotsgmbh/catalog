@@ -68,7 +68,7 @@ ENTRY="entry-name"
 # needs token with "Contents" repository permissions (write)
 TOKEN="github_pat_..."
 
-$ curl -L \
+curl -L \
   -X POST \
   -H "Accept: application/vnd.github.v3+json" \
   -H "Authorization: Bearer ${TOKEN}" \
