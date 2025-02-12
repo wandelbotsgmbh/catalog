@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 1.1.0
+version: 1.1.1
 name: zivid-intel
 description: "Driver for Zivid cameras. (For Systems with Intel GPU)"
 homepage: https://www.zivid.com/
@@ -8,7 +8,7 @@ app:
     name: zivid-intel
     appIcon: app_icon.png
     containerImage:
-        image: wandelbots.azurecr.io/nova-apps/zivid-intel:1.1.0
+        image: wandelbots.azurecr.io/nova-apps/zivid-intel:1.1.1
         secrets:
             - name: pull-secret-wandelbots-azurecr-io
     port: 8080
