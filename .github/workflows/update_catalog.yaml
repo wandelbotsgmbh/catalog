@@ -15,6 +15,7 @@ jobs:
       ENTRY: ${{ github.event.client_payload.entry }}
       VERSION: ${{ github.event.client_payload.version }}
       IMAGE: ${{ github.event.client_payload.image }}
+      MANIFEST_PATH: catalog/${{ github.event.client_payload.entry }}/manifest.yaml
 
     steps:
       - uses: actions/checkout@v4
@@ -24,6 +25,7 @@ jobs:
           echo "Version: ${VERSION}"
           echo "Entry: ${ENTRY}"
           echo "Image: ${IMAGE}"
+          echo "Manifest Path (generated): ${MANIFEST_PATH}"
 
           if [ -z "${VERSION}" ]; then
             echo "missing field 'version'"
@@ -42,14 +44,20 @@ jobs:
 
       - name: Set Entry Version And Image
         uses: mikefarah/yq@master
+        env:
+          # somehow env vars where missing in the yq action, so we reassign them
+          ENTRY: ${{ github.event.client_payload.entry }}
+          VERSION: ${{ github.event.client_payload.version }}
+          IMAGE: ${{ github.event.client_payload.image }}
+          MANIFEST_PATH: catalog/${{ github.event.client_payload.entry }}/manifest.yaml
         with:
           cmd: |
-            yq -i -I4 ".app.containerImage.image = \"${IMAGE}\"" "catalog/${ENTRY}/manifest.yaml" \
-            && yq -i -I4 ".version = \"${VERSION}\"" "catalog/${ENTRY}/manifest.yaml"
+            yq -i -I4 '.app.containerImage.image = strenv(IMAGE)' ${MANIFEST_PATH} && \
+            yq -i -I4 '.version = strenv(VERSION)' ${MANIFEST_PATH}"
 
       - name: Print Changes
         run: |
-          cat catalog/${ENTRY}/manifest.yaml
+          cat ${MANIFEST_PATH}
 
       # - name: Create PR
       #   env:
