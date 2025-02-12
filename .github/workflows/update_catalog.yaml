@@ -25,21 +25,26 @@ jobs:
             yq -i -I4 '.app.containerImage.image = "${IMAGE}"' catalog/${ENTRY}/manifest.yaml \
             && yq -i -I4 '.version = "${VERSION}"' catalog/${ENTRY}/manifest.yaml
 
-      - name: Create PR
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Print Changes
         run: |
-          VERSION="${{ github.event.client_payload.version }}"
           ENTRY="${{ github.event.client_payload.entry }}"
-          BRANCH="feature/update-${ENTRY}-to-${VERSION}"
-          git checkout -b $BRANCH
+          cat catalog/${ENTRY}/manifest.yaml
 
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+      # - name: Create PR
+      #   env:
+      #     GH_TOKEN: ${{ github.token }}
+      #   run: |
+      #     VERSION="${{ github.event.client_payload.version }}"
+      #     ENTRY="${{ github.event.client_payload.entry }}"
+      #     BRANCH="feature/update-${ENTRY}-to-${VERSION}"
+      #     git checkout -b $BRANCH
 
-          git add catalog/${ENTRY}/manifest.yaml
-          git commit -m "Update ${ENTRY} to ${VERSION}"
-          git push -u origin $BRANCH
+      #     git config user.name "github-actions[bot]"
+      #     git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          gh pr create --title "Update ${ENTRY} to ${VERSION}" --body "Automated PR from ${ENTRY} release" --base main
-          gh pr merge --squash --auto
+      #     git add catalog/${ENTRY}/manifest.yaml
+      #     git commit -m "Update ${ENTRY} to ${VERSION}"
+      #     git push -u origin $BRANCH
+
+      #     gh pr create --title "Update ${ENTRY} to ${VERSION}" --body "Automated PR from ${ENTRY} release" --base main
+      #     gh pr merge --squash --auto
