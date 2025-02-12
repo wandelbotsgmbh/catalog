@@ -25,7 +25,7 @@ jobs:
           echo "Version: ${VERSION}"
           echo "Entry: ${ENTRY}"
           echo "Image: ${IMAGE}"
-          
+
           if [ -z "${VERSION}" ]; then
             echo "missing field 'version'"
             exit 1
