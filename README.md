@@ -57,3 +57,39 @@ $ yq -i -I4 '.app.containerImage.image = "someimage:123"' catalog/doom/manifest.
 # update the version 
 $ yq -i -I4 '.version = "1.2.3"' catalog/doom/manifest.yaml
 ```
+
+## Updating Using Github Actions
+
+The following shows an example on how to update the catalog from github actions:
+```yaml
+      - name: Checkout Catalog Repo
+        uses: actions/checkout@v4
+        if: steps.release.outputs.version != ''
+        with:
+          repository: wandelbotsgmbh/catalog
+          token: ${{ secrets.CATALOG_TOKEN }}
+
+      - name: Set Zivid Versions
+        if: steps.release.outputs.version != ''
+        uses: mikefarah/yq@master
+        with:
+          # yamllint disable rule:line-length
+          cmd: |
+            yq -i -I4 '.app.containerImage.image = "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.release.outputs.version }}"' catalog/zivid-intel/manifest.yaml \
+            && yq -i -I4 '.version = "${{ steps.release.outputs.version }}"' catalog/zivid-intel/manifest.yaml
+          # yamllint enable rule:line-length
+
+      - name: Update Catalog
+        if: steps.release.outputs.version != ''
+        env:
+          GH_TOKEN: ${{ secrets.CATALOG_TOKEN }}
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git checkout -b feature/update-zivid-nova-to-${{ steps.release.outputs.version }}
+          git add catalog/zivid-intel/manifest.yaml
+          git commit -m "Update Zivid to ${{ steps.release.outputs.version }}"
+          git push -u origin feature/update-zivid-nova-to-${{ steps.release.outputs.version }}
+          gh pr create --fill
+          gp pr merge --squash --auto
+```
