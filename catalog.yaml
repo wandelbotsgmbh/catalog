@@ -9,8 +9,8 @@ entries:
     - name: jupyter
       version: 0.0.4
     - name: nova-rerun-bridge
-      version: 0.29.1
+      version: 0.32.0
     - name: rerun
-      version: 0.29.1
+      version: 0.32.0
     - name: zivid-intel
       version: 1.2.0
