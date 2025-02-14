@@ -11,6 +11,6 @@ entries:
     - name: nova-rerun-bridge
       version: 0.35.0
     - name: rerun
-      version: 0.34.0
+      version: 0.35.0
     - name: zivid-intel
       version: 1.2.0
