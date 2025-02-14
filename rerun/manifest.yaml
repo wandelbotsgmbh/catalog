@@ -1,21 +1,21 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.32.1
+version: 0.33.0
 name: rerun
 description: |
-  Rerun is building the multimodal data stack to model,
-  ingest, store, query and view robotics-style data.
-  It's used in areas like robotics, spatial and embodied AI,
-  generative media, industrial processing, simulation, security,
-  and health.
-  Use this app together with the nova-rerun-bridge app to see
-  planned motions of this nova instance.
+    Rerun is building the multimodal data stack to model,
+    ingest, store, query and view robotics-style data.
+    It's used in areas like robotics, spatial and embodied AI,
+    generative media, industrial processing, simulation, security,
+    and health.
+    Use this app together with the nova-rerun-bridge app to see
+    planned motions of this nova instance.
 homepage: https://rerun.io/
 app:
-  name: rerun
-  appIcon: app_icon.png
-  containerImage:
-    image: wandelbots.azurecr.io/nova-apps/rerun:0.32.1
-    secrets:
-      - name: pull-secret-wandelbots-azurecr-io
-  port: 3001
+    name: rerun
+    appIcon: app_icon.png
+    containerImage:
+        image: wandelbots.azurecr.io/nova-apps/rerun:0.33.0
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 3001
