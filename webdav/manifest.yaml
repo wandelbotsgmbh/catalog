@@ -3,10 +3,11 @@
 version: 0.0.6
 name: webdav
 description: |
-    An app which provided the WebDav protocols to read/write files.
+    Provides the WebDAV protocols for reading/writing files.
     WebDAV stands for "Web-based Distributed Authoring and Versioning".
     It is a set of extensions to the HTTP protocol which allows users
     to collaboratively edit and manage files on remote web servers.
+    You can add WebDAV as network drive to your computer.
 homepage: http://webdav.org/
 app:
     name: webdav
