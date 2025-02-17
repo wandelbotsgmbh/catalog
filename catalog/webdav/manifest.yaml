@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/wandelbotsgmbh/catalog/refs/heads/main/schema.json
+---
+version: 0.0.6
+name: webdav
+description: |
+    An app which provided the WebDav protocols to read/write files.
+    WebDAV stands for "Web-based Distributed Authoring and Versioning".
+    It is a set of extensions to the HTTP protocol which allows users
+    to collaboratively edit and manage files on remote web servers.
+homepage: http://webdav.org/
+app:
+    name: webdav
+    appIcon: app_icon.png
+    containerImage:
+        image: wandelbots.azurecr.io/nova-apps/webdav:0.0.6
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 80
+    storage:
+        mountPath: /media
+        capacity: 120Mi
