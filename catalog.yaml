@@ -13,6 +13,6 @@ entries:
     - name: rerun
       version: 0.36.2
     - name: webdav
-      version: 0.0.6
+      version: 0.0.7
     - name: zivid-intel
       version: 1.2.0
