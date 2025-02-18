@@ -2,8 +2,6 @@
 schemaVersion: 0.0.1
 version: 0.0.1
 entries:
-    - name: app-store
-      version: 1.8.5
     - name: doom
       version: 0.0.8
     - name: jupyter
