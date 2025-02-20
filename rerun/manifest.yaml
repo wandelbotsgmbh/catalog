@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.38.2
+version: 0.38.3
 name: rerun
 description: |
     Rerun is building the multimodal data stack to model,
@@ -15,7 +15,7 @@ app:
     name: rerun
     appIcon: app_icon.png
     containerImage:
-        image: wandelbots.azurecr.io/nova-apps/rerun:0.38.2
+        image: wandelbots.azurecr.io/nova-apps/rerun:0.38.3
         secrets:
             - name: pull-secret-wandelbots-azurecr-io
     port: 3001
