@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.38.1
+version: 0.38.2
 name: nova-rerun-bridge
 description: |
     Collects all planned motions and serves a rrd file which can
@@ -11,7 +11,7 @@ app:
     name: nova-rerun-bridge
     appIcon: app_icon.png
     containerImage:
-        image: wandelbots.azurecr.io/nova-apps/nova-rerun-bridge:0.38.1
+        image: wandelbots.azurecr.io/nova-apps/nova-rerun-bridge:0.38.2
         secrets:
             - name: pull-secret-wandelbots-azurecr-io
     port: 3001
