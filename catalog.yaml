@@ -9,7 +9,7 @@ entries:
     - name: magma-p2p
       version: 0.0.2
     - name: nova-rerun-bridge
-      version: 0.38.2
+      version: 0.38.3
     - name: rerun
       version: 0.38.3
     - name: webdav
