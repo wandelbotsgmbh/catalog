@@ -7,7 +7,7 @@ entries:
     - name: jupyter
       version: 0.0.4
     - name: magma-p2p
-      version: 0.0.2
+      version: 0.0.7
     - name: nova-rerun-bridge
       version: 0.40.1
     - name: rerun
