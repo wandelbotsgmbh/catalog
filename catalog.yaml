@@ -11,7 +11,7 @@ entries:
     - name: nova-rerun-bridge
       version: 0.39.1
     - name: rerun
-      version: 0.39.1
+      version: 0.40.0
     - name: webdav
       version: 0.0.8
     - name: zivid-intel
