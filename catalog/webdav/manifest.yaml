@@ -2,21 +2,22 @@
 ---
 version: 0.0.8
 name: webdav
+supportsCloud: false
 description: |
-    Provides the WebDAV protocols for reading/writing files.
-    WebDAV stands for "Web-based Distributed Authoring and Versioning".
-    It is a set of extensions to the HTTP protocol which allows users
-    to collaboratively edit and manage files on remote web servers.
-    You can add WebDAV as network drive to your computer.
+  Provides the WebDAV protocols for reading/writing files.
+  WebDAV stands for "Web-based Distributed Authoring and Versioning".
+  It is a set of extensions to the HTTP protocol which allows users
+  to collaboratively edit and manage files on remote web servers.
+  You can add WebDAV as network drive to your computer.
 homepage: http://webdav.org/
 app:
-    name: webdav
-    appIcon: app_icon.png
-    containerImage:
-        image: wandelbots.azurecr.io/nova-apps/webdav:0.0.8
-        secrets:
-            - name: pull-secret-wandelbots-azurecr-io
-    port: 80
-    storage:
-        mountPath: /media
-        capacity: 120Mi
+  name: webdav
+  appIcon: app_icon.png
+  containerImage:
+    image: wandelbots.azurecr.io/nova-apps/webdav:0.0.8
+    secrets:
+      - name: pull-secret-wandelbots-azurecr-io
+  port: 80
+  storage:
+    mountPath: /media
+    capacity: 120Mi
