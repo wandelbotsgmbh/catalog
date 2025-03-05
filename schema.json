@@ -2,13 +2,16 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/wandelbotsgmbh/catalog/schema.json",
   "title": "Catalog Entry",
-  "supportCloud": "boolean",
   "description": "An entry in the wandelbots catalog",
   "type": "object",
   "properties": {
     "name": {
       "description": "Name of the entry (e.g. the name of the app). Should be unique in the catalog.",
       "type": "string"
+    },
+    "supportCloud": {
+      "description": "Indicates if the app is supported in the cloud (*.wandelbots.io).",
+      "type": "boolean"
     },
     "description": {
       "description": "Description of the entry.",
