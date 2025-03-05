@@ -2,19 +2,20 @@
 ---
 version: 0.0.4
 name: jupyter
+supportsCloud: true
 description: |
-    Jupyter is a free, open-source, interactive web tool known as a computational notebook,
-    which researchers can use to combine software code, computational output,
-    explanatory text and multimedia resources in a single document.
+  Jupyter is a free, open-source, interactive web tool known as a computational notebook,
+  which researchers can use to combine software code, computational output,
+  explanatory text and multimedia resources in a single document.
 homepage: https://jupyter.org/
 app:
-    name: jupyter
-    appIcon: app_icon.png
-    containerImage:
-        image: wandelbots.azurecr.io/nova-apps/jupyter:0.0.5
-        secrets:
-            - name: pull-secret-wandelbots-azurecr-io
-    port: 3000
-    storage:
-        mountPath: /app/data
-        capacity: 120Mi
+  name: jupyter
+  appIcon: app_icon.png
+  containerImage:
+    image: wandelbots.azurecr.io/nova-apps/jupyter:0.0.5
+    secrets:
+      - name: pull-secret-wandelbots-azurecr-io
+  port: 3000
+  storage:
+    mountPath: /app/data
+    capacity: 120Mi
