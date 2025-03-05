@@ -2,6 +2,7 @@
 ---
 version: 0.0.7
 name: MAGMA-P2P
+supportsCloud: false
 description: |
   Plans collision free p2p movements based on the MAGMA library.
 homepage: https://wandelbots.com
