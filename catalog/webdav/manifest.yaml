@@ -2,7 +2,7 @@
 ---
 version: 0.0.8
 name: webdav
-supportsCloud: false
+supportsCloud: true
 description: |
   Provides the WebDAV protocols for reading/writing files.
   WebDAV stands for "Web-based Distributed Authoring and Versioning".
