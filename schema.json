@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/wandelbotsgmbh/catalog/schema.json",
   "title": "Catalog Entry",
-  "supportCloud": "bool",
+  "supportCloud": "boolean",
   "description": "An entry in the wandelbots catalog",
   "type": "object",
   "properties": {
