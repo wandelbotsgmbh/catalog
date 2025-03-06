@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=../../schema.json
+---
+version: 1.0.0
+name: onrobotcomputebox
+supportsCloud: true
+description: |
+  Use a OnRobot Compute Box to control a magnetic gripper.
+app:
+  name: onrobotcomputebox
+  appIcon: computebox.jpeg
+  containerImage:
+    image: wandelbots.azurecr.io/nova-apps/onrobotcomputebox:1.0.0
+  port: 8000
