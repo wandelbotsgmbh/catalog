@@ -2,7 +2,7 @@
 ---
 version: 1.0.0
 name: onrobotcomputebox
-supportsCloud: true
+supportsCloud: false
 description: |
   Use a OnRobot Compute Box to control a magnetic gripper.
 app:
