@@ -15,5 +15,5 @@ app:
     image: wandelbots.azurecr.io/nova-apps/onrobotcomputebox:1.0.0
   env:
     - name: COMPUTEBOX_IP
-      value: 
+      value:
   port: 8000
