@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../../schema.json
+---
+version: 1.0.0
+name: onrobotcomputebox
+supportsCloud: false
+homepage: https://www.onrobot.com/
+description: |
+  Use a OnRobot Compute Box to control a magnetic gripper.
+  To set the IP for the compute box please adjust the environment variable `COMPUTEBOX_IP`.
+  E.g. via `nova app edit onrobotcomputebox`
+app:
+  name: onrobotcomputebox
+  appIcon: app_icon
+  containerImage:
+    image: wandelbots.azurecr.io/nova-apps/onrobotcomputebox:1.0.0
+  env:
+    - name: COMPUTEBOX_IP
+      value:
+  port: 8000
