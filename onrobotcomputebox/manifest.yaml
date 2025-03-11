@@ -1,5 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
+
 version: 1.0.0
 name: onrobotcomputebox
 supportsCloud: false
@@ -13,7 +14,4 @@ app:
   appIcon: app_icon
   containerImage:
     image: wandelbots.azurecr.io/nova-apps/onrobotcomputebox:1.0.0
-  env:
-    - name: COMPUTEBOX_IP
-      value:
   port: 8000
