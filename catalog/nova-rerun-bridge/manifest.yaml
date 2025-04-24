@@ -1,21 +1,21 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.42.1
+version: 0.50.3
 name: nova-rerun-bridge
 supportsCloud: true
 description: |
-  Collects all planned motions and serves a rrd file which can
-  viewed with rerun. Install the rerun app to see the content of this
-  file directly in the browser.
+    Collects all planned motions and serves a rrd file which can
+    viewed with rerun. Install the rerun app to see the content of this
+    file directly in the browser.
 homepage: https://github.com/wandelbotsgmbh/nova-rerun-bridge
 app:
-  name: nova-rerun-bridge
-  appIcon: app_icon.png
-  containerImage:
-    image: wandelbots.azurecr.io/nova-apps/nova-rerun-bridge:0.42.1
-    secrets:
-      - name: pull-secret-wandelbots-azurecr-io
-  port: 3001
-  storage:
-    mountPath: /app/data
-    capacity: 150Mi
+    name: nova-rerun-bridge
+    appIcon: app_icon.png
+    containerImage:
+        image: wandelbots.azurecr.io/nova-apps/nova-rerun-bridge:0.50.3
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 3001
+    storage:
+        mountPath: /app/data
+        capacity: 150Mi
