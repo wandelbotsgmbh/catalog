@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.51.0
+version: 0.52.0
 name: nova-rerun-bridge
 supportsCloud: true
 description: |
@@ -12,7 +12,7 @@ app:
     name: nova-rerun-bridge
     appIcon: app_icon.png
     containerImage:
-        image: wandelbots.azurecr.io/nova-apps/nova-rerun-bridge:0.51.0
+        image: wandelbots.azurecr.io/nova-apps/nova-rerun-bridge:0.52.0
         secrets:
             - name: pull-secret-wandelbots-azurecr-io
     port: 3001
