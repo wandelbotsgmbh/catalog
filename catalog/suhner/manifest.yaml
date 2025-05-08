@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=../../schema.json
+---
+version: 0.0.8
+name: suhner-efcm
+supportsCloud: false
+description: |
+  The EFCm-02 is a compact, modular compliance system designed to seamlessly switch tools or heads within existing robotic cells. 
+homepage: https://robotic-grinding.suhner.com/efcm-02/
+app:
+  name: suhner-efcm
+  appIcon: app_icon.png
+  containerImage:
+    image: todo-image
+    secrets:
+      - name: pull-secret-wandelbots-azurecr-io
+  port: 8080
