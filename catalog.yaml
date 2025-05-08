@@ -13,7 +13,7 @@ entries:
     - name: onrobotcomputebox
       version: 1.0.0
     - name: rerun
-      version: 1.2.0
+      version: 1.3.0
     - name: webdav
       version: 0.0.8
     - name: zivid-intel
