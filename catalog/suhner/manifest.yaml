@@ -4,7 +4,11 @@ version: 0.0.8
 name: suhner-efcm
 supportsCloud: false
 description: |
-  The EFCm-02 is a compact, modular compliance system designed to seamlessly switch tools or heads within existing robotic cells. 
+  The EFCm-02 is a compact, modular compliance system designed to seamlessly switch tools or heads within existing robotic cells.
+  Usage:
+    To change default interface settings provide the IPs via Environment Variables:
+    - `MODULAR_ADDRESS`
+    - `EFC_ADDRESS`
 homepage: https://robotic-grinding.suhner.com/efcm-02/
 app:
   name: suhner-efcm
