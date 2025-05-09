@@ -19,4 +19,4 @@ entries:
     - name: webdav
       version: 0.0.9
     - name: zivid-intel
-      version: 1.5.1
+      version: 1.5.2
