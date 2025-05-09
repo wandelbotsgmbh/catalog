@@ -1,21 +1,21 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.0.7
+version: 0.0.9
 name: suhner-efcm
 supportsCloud: false
 description: |
-  The EFCm-02 is a compact, modular compliance system designed to seamlessly switch tools or heads
-  within existing robotic cells.
-  Usage:
-    To change default interface settings provide the IPs via Environment Variables:
-    - `MODULAR_ADDRESS`
-    - `EFC_ADDRESS`
+    The EFCm-02 is a compact, modular compliance system designed to seamlessly switch tools or heads
+    within existing robotic cells.
+    Usage:
+      To change default interface settings provide the IPs via Environment Variables:
+      - `MODULAR_ADDRESS`
+      - `EFC_ADDRESS`
 homepage: https://robotic-grinding.suhner.com/efcm-02/
 app:
-  name: suhner-efcm
-  appIcon: app_icon.png
-  containerImage:
-    image: wandelbots.azurecr.io/nova-services/suhner-nova:0.0.7
-    secrets:
-      - name: pull-secret-wandelbots-azurecr-io
-  port: 8080
+    name: suhner-efcm
+    appIcon: app_icon.png
+    containerImage:
+        image: wandelbots.azurecr.io/nova-services/suhner-nova:0.0.9
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 8080
