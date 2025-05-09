@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/wandelbotsgmbh/catalog/refs/heads/main/schema.json
 ---
-version: 0.0.8
+version: 0.0.9
 name: webdav
 supportsCloud: true
 description: |
@@ -14,7 +14,7 @@ app:
   name: webdav
   appIcon: app_icon.png
   containerImage:
-    image: wandelbots.azurecr.io/nova-apps/webdav:0.0.8
+    image: wandelbots.azurecr.io/nova-apps/webdav:0.0.9
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
   port: 80
