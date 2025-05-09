@@ -7,7 +7,7 @@ entries:
     - name: jupyter
       version: 0.0.4
     - name: magma-p2p
-      version: 0.0.7
+      version: 0.0.8
     - name: nova-rerun-bridge
       version: 1.3.1
     - name: onrobotcomputebox
