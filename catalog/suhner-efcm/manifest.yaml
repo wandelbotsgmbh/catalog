@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.0.8
+version: 0.0.7
 name: suhner-efcm
 supportsCloud: false
 description: |
@@ -14,7 +14,7 @@ app:
   name: suhner-efcm
   appIcon: app_icon.png
   containerImage:
-    image: todo-image
+    image: wandelbots.azurecr.io/nova-services/suhner-nova:0.0.7
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
   port: 8080
