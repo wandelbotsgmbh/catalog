@@ -15,7 +15,7 @@ entries:
     - name: rerun
       version: 1.4.0
     - name: suhner-efcm
-      version: 0.0.9
+      version: 0.0.10
     - name: webdav
       version: 0.0.9
     - name: zivid-intel
