@@ -16,6 +16,8 @@ entries:
       version: 1.11.0
     - name: suhner-efcm
       version: 0.0.12
+    - name: vscode
+      version: 0.0.2
     - name: webdav
       version: 0.0.9
     - name: zivid-intel
