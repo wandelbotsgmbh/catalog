@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../../schema.json
 ---
 version: 0.0.11
-name: vscode
+name: Advanced Code Editor (Beta)
 supportsCloud: true
 description: |
   A development IDE with the Wandelbots NOVA SDK
