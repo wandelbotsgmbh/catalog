@@ -2,6 +2,8 @@
 schemaVersion: 0.0.1
 version: 0.0.1
 entries:
+    - name: advanced-code-editor
+      version: 0.0.13
     - name: doom
       version: 0.0.8
     - name: jupyter
@@ -15,8 +17,6 @@ entries:
     - name: rerun
       version: 1.11.0
     - name: suhner-efcm
-      version: 0.0.13
-    - name: vscode
       version: 0.0.13
     - name: webdav
       version: 0.0.9
