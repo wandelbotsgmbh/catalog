@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.0.14
+version: 0.0.16
 name: Advanced Code Editor (Beta)
 supportsCloud: true
 description: |
