@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.0.18
+version: 0.0.18.1
 name: Advanced Code Editor (Beta)
 supportsCloud: true
 description: |
@@ -10,10 +10,10 @@ app:
   name: advanced-code-editor
   appIcon: app_icon.png
   containerImage:
-    image: wandelbots.azurecr.io/nova-apps/advanced-code-viewer:0.0.17
+    image: wandelbots.azurecr.io/nova-apps/advanced-code-viewer:0.0.18
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
   port: 3001
   storage:
-    mountPath: /app/data
+    mountPath: /config/workspace
     capacity: 400Mi
