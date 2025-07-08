@@ -15,7 +15,7 @@ entries:
     - name: onrobotcomputebox
       version: 1.0.0
     - name: rerun
-      version: 2.1.1
+      version: 2.1.2
     - name: suhner-efcm
       version: 0.0.13
     - name: webdav
