@@ -17,7 +17,7 @@ entries:
     - name: rerun
       version: 2.2.2
     - name: sensopart-visor
-      version: 0.0.5
+      version: 0.0.6
     - name: suhner-efcm
       version: 0.0.13
     - name: webdav
