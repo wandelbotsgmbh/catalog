@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../../schema.json
+---
+version: 0.0.5
+name: Sensopart VISOR
+supportsCloud: false
+description: |
+  OpenAPI Service for basic Sensopart VISOR interaction
+homepage: https://github.com/wandelbotsgmbh
+app:
+  name: sensopart-visor
+  appIcon: app_icon.png
+  containerImage:
+    image: wandelbots.azurecr.io/nova-apps/sensopart-visor:0.0.5
+    secrets:
+      - name: pull-secret-wandelbots-azurecr-io
+  port: 3000
+  storage:
+    mountPath: /config/workspace
+    capacity: 150Mi
