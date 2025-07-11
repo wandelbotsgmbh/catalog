@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../../schema.json
 ---
 version: 0.0.5
-name: Sensopart VISOR 
+name: Sensopart VISOR
 supportsCloud: false
 description: |
   OpenAPI Service for basic Sensopart VISOR interaction
