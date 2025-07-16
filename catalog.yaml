@@ -2,8 +2,6 @@
 schemaVersion: 0.0.1
 version: 0.0.1
 entries:
-    - name: advanced-code-editor
-      version: 0.0.27
     - name: doom
       version: 0.0.8
     - name: jupyter
@@ -20,6 +18,8 @@ entries:
       version: 0.0.6
     - name: suhner-efcm
       version: 0.0.13
+    - name: visual-studio-code
+      version: 0.0.29
     - name: webdav
       version: 0.0.9
     - name: zivid-intel
