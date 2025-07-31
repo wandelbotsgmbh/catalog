@@ -9,11 +9,11 @@ entries:
     - name: magma-p2p
       version: 0.0.8
     - name: nova-rerun-bridge
-      version: 2.7.4
+      version: 2.8.0
     - name: onrobotcomputebox
       version: 1.0.0
     - name: rerun
-      version: 2.8.0
+      version: 2.8.1
     - name: sensopart-visor
       version: 0.0.6
     - name: suhner-efcm
