@@ -13,7 +13,7 @@ entries:
     - name: onrobotcomputebox
       version: 1.0.0
     - name: rerun
-      version: 2.12.0
+      version: 2.12.1
     - name: sensopart-visor
       version: 0.0.6
     - name: suhner-efcm
