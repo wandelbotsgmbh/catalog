@@ -15,7 +15,7 @@ entries:
     - name: program-operator
       version: 1.0.1
     - name: rerun
-      version: 2.13.0
+      version: 2.14.0
     - name: sensopart-visor
       version: 0.0.6
     - name: suhner-efcm
