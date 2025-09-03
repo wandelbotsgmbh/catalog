@@ -85,13 +85,13 @@
           "description": "Additional resources that the application requires",
           "type": "object",
           "properties": {
-            "intel_gpu": {
+            "intel-gpu": {
               "description": "Number of GPUs the application requires",
               "type": "integer",
               "minimum": 0,
               "maximum": 1
             },
-            "memory_limit": {
+            "memory-limit": {
               "description": "The maximum memory allocated to this application",
               "type": "string"
             }
