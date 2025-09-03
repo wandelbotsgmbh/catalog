@@ -4,7 +4,8 @@ version: 1.0.1
 name: Program Operator (Beta)
 supportsCloud: true
 description: |
-  Start your programs build with Wandelbots NOVA
+  Operate your programs build with Wandelbots NOVA. 
+  Run and monitor robot programs safely.
 homepage: https://github.com/wandelbotsgmbh
 app:
   name: program-operator
