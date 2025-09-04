@@ -80,6 +80,22 @@
             }
           },
           "required": ["mountPath", "capacity"]
+        },
+        "resources": {
+          "description": "Additional resources that the application requires",
+          "type": "object",
+          "properties": {
+            "intel-gpu": {
+              "description": "Number of GPUs the application requires",
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "memory-limit": {
+              "description": "The maximum memory allocated to this application",
+              "type": "string"
+            }
+          }
         }
       },
       "required": ["name", "appIcon", "port", "containerImage"]
