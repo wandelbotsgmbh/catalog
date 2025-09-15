@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.0.38
+version: 0.0.39
 name: Visual Studio Code (Beta)
 supportsCloud: true
 description: |
@@ -10,7 +10,7 @@ app:
   name: visual-studio-code
   appIcon: app_icon.png
   containerImage:
-    image: wandelbots.azurecr.io/nova-apps/visual-studio-code:0.0.38
+    image: wandelbots.azurecr.io/nova-apps/visual-studio-code:0.0.39
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
   port: 3001
