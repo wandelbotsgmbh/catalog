@@ -21,7 +21,7 @@ entries:
     - name: suhner-efcm
       version: 0.0.13
     - name: visual-studio-code
-      version: 0.0.38
+      version: 0.0.39
     - name: webdav
       version: 0.0.9
     - name: zivid-intel
