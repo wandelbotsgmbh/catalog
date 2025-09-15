@@ -13,7 +13,7 @@ entries:
     - name: onrobotcomputebox
       version: 1.0.0
     - name: program-operator
-      version: 1.0.1
+      version: 1.1.0
     - name: rerun
       version: 2.16.1
     - name: sensopart-visor
