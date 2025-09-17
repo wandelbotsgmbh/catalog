@@ -2,7 +2,7 @@
 ---
 version: 0.1.4
 beta: true
-name: Signals (Beta)
+name: Signals
 supportsCloud: true
 description: |
   Monitor and control robot I/O signals.
