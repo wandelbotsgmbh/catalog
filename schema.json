@@ -13,6 +13,10 @@
       "description": "Indicates if the app is supported in the cloud (*.wandelbots.io).",
       "type": "boolean"
     },
+    "beta": {
+      "description": "Indicates if the app is in beta phase. Beta apps will be displayed with a beta badge in the UI.",
+      "type": "boolean"
+    },
     "description": {
       "description": "Description of the entry.",
       "type": "string"
