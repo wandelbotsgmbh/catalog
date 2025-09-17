@@ -1,8 +1,9 @@
 # yaml-language-server: $schema=../../schema.json
 ---
 version: 1.5.0
-name: Program Operator (Beta)
+name: Program Operator
 supportsCloud: true
+beta: true
 description: |
   Operate your programs build with Wandelbots NOVA.
   Run and monitor robot programs safely.

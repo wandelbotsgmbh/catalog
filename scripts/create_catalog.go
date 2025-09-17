@@ -17,6 +17,7 @@ const (
 type CatalogEntry struct {
 	Name    string `yaml:"name"`
 	Version string `yaml:"version"`
+	Beta    bool   `yaml:"beta,omitempty"`
 }
 
 type Catalog struct {
@@ -88,8 +89,12 @@ func createEntry(entryDir string) (CatalogEntry, error) {
 		return CatalogEntry{}, fmt.Errorf("version is empty")
 	}
 
+	// Read beta field, default to false if not present (backwards compatibility)
+	beta, _ := parsed["beta"].(bool)
+
 	return CatalogEntry{
 		Name:    entryDir,
 		Version: version,
+		Beta:    beta,
 	}, nil
 }
