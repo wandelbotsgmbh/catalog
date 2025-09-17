@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=../../schema.json
+---
+version: 0.1.2
+beta: true
+name: Signals (Beta)
+supportsCloud: true
+description: |
+  Monitor and control robot I/O signals.
+homepage: https://github.com/wandelbotsgmbh
+app:
+  name: signals-app
+  appIcon: app_icon.png
+  containerImage:
+    image: wandelbots.azurecr.io/nova-apps/signals-app:0.1.2
+    secrets:
+      - name: pull-secret-wandelbots-azurecr-io
+  port: 3000
