@@ -18,6 +18,8 @@ entries:
       version: 2.16.1
     - name: sensopart-visor
       version: 0.0.6
+    - name: signals
+      version: 0.1.6
     - name: suhner-efcm
       version: 0.0.13
     - name: visual-studio-code
