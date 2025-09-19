@@ -2,7 +2,8 @@
 ---
 version: 0.1.4
 beta: true
-name: Signals
+# Remove the Beta label here as soon as the App Store supports `beta: true` above.
+name: Signals (Beta)
 supportsCloud: true
 description: |
   Monitor and control robot I/O signals.
