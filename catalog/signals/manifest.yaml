@@ -9,8 +9,8 @@ description: |
   Monitor and control robot I/O signals.
 homepage: https://github.com/wandelbotsgmbh
 app:
-  name: signals-app
-  appIcon: icon.png
+  name: signals
+  appIcon: app_icon.png
   containerImage:
     image: wandelbots.azurecr.io/nova-apps/signals-app:0.1.6
     secrets:
