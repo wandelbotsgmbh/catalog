@@ -17,7 +17,7 @@ entries:
     - name: rerun
       version: 2.16.1
     - name: sensopart-visor
-      version: 0.0.6
+      version: 0.0.7
     - name: signals
       version: 0.1.6
     - name: suhner-efcm
