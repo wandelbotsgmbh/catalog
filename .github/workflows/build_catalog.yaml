@@ -26,6 +26,9 @@ jobs:
       - name: Create Catalog Manifest
         run: go run hack/create_catalog.go
 
+      - name: Bundle schema.json
+        run: cp schema.json catalog/schema.json
+
       - name: Deploy To gh-pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         if: ${{ github.ref == 'refs/heads/main' }}
