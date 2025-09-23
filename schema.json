@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wandelbotsgmbh.github.io/catalog/schema.json",
+  "title": "Catalog Entry",
+  "description": "An entry in the wandelbots catalog",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "Name of the entry (e.g. the name of the app). Should be unique in the catalog.",
+      "type": "string"
+    },
+    "supportsCloud": {
+      "description": "Indicates if the app is supported in the cloud (*.wandelbots.io).",
+      "type": "boolean"
+    },
+    "description": {
+      "description": "Description of the entry.",
+      "type": "string"
+    },
+    "version": {
+      "description": "Version of the entry (e.g app version).",
+      "type": "string"
+    },
+    "homepage": {
+      "description": "URL to the homepage or github repository with detailed information.",
+      "type": "string"
+    },
+    "app": {
+      "description": "Specification for the app deployment",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Name of the app (should be unique in catalog)",
+          "type": "string"
+        },
+        "appIcon": {
+          "description": "relative URL path to the app icon (e.g. icon served at '/app_icon.png' is simple 'app_icon.png')",
+          "type": "string"
+        },
+        "port": {
+          "description": "Port on which the app is getting exposed from the container",
+          "type": "integer"
+        },
+        "containerImage": {
+          "description": "Details for the container image",
+          "type": "object",
+          "properties": {
+            "image": {
+              "description": "Full image name (e.g. docker.io/wandelbotsgmbh/jupyter:0.0.4)",
+              "type": "string"
+            },
+            "secrets": {
+              "description": "List of secret identifiers available in the nova instance. This is not required for public available images.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "description": "Name of the secret",
+                    "type": "string"
+                  }
+                },
+                "required": ["name"]
+              }
+            }
+          },
+          "required": ["image"]
+        },
+        "storage": {
+          "description": "The path and capacity of a volume that retains data across application restarts. The maximal requestable capacity is 300Mi",
+          "type": "object",
+          "properties": {
+            "mountPath": {
+              "description": "Path where the storage should be mounted in the container",
+              "type": "string"
+            },
+            "capacity": {
+              "description": "The amount of local storage available for the application. Example: 100Mi NOTE: The capacity can NEVER be reduced!.",
+              "type": "string"
+            }
+          },
+          "required": ["mountPath", "capacity"]
+        },
+        "resources": {
+          "description": "Additional resources that the application requires",
+          "type": "object",
+          "properties": {
+            "intel-gpu": {
+              "description": "Number of GPUs the application requires",
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "memory-limit": {
+              "description": "The maximum memory allocated to this application",
+              "type": "string"
+            }
+          }
+        }
+      },
+      "required": ["name", "appIcon", "port", "containerImage"]
+    },
+    "dependencies": {
+      "description": "List of dependencies for the app",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Name of the catalog entry",
+            "type": "string"
+          }
+        },
+        "required": ["name"]
+      }
+    }
+  },
+  "required": ["name", "description", "version", "homepage", "app"]
+}
