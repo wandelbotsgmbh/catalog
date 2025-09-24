@@ -2,6 +2,7 @@
 ---
 version: 2.2.0
 name: zivid-intel
+novaOsVersion: ">= 25.3"
 supportsCloud: false
 description: "Driver for Zivid cameras. (For Systems with Intel GPU)"
 homepage: https://www.zivid.com/

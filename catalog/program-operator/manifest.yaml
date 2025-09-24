@@ -2,6 +2,7 @@
 ---
 version: 1.5.0
 name: Program Operator (Beta)
+novaOsVersion: ">= 25.3"
 supportsCloud: true
 description: |
   Operate your programs build with Wandelbots NOVA.

@@ -2,6 +2,7 @@
 ---
 version: 0.0.7
 name: Sensopart VISOR
+novaOsVersion: ">= 25.3"
 supportsCloud: false
 description: |
     OpenAPI Service for basic Sensopart VISOR interaction
