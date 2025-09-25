@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://wandelbotsgmbh.github.io/catalog/schema.json
+---
+version: 0.1.3
+name: doom
+supportsCloud: true
+description: |
+  This a new version of the DOOM game, which only shows up in the Preview Store.
+homepage: https://www.idsoftware.com/de
+app:
+  name: doom
+  appIcon: app_icon.png
+  containerImage:
+    image: docker.io/andiikaa/doom:0.0.8
+    secrets:
+      - name: pull-secret-registry-1-docker-io
+  port: 8080
