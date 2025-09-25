@@ -15,6 +15,7 @@ jobs:
       ENTRY: ${{ github.event.client_payload.entry }}
       VERSION: ${{ github.event.client_payload.version }}
       IMAGE: ${{ github.event.client_payload.image }}
+      PREVIEW: ${{ github.event.client_payload.preview }}
       MANIFEST_PATH: catalog/${{ github.event.client_payload.entry }}/manifest.yaml
 
     steps:
@@ -23,6 +24,7 @@ jobs:
       - name: Verify Parameters
         run: |
           echo "Version: ${VERSION}"
+          echo "Preview: ${PREVIEW}"
           echo "Entry: ${ENTRY}"
           echo "Image: ${IMAGE}"
           echo "Manifest Path (generated): ${MANIFEST_PATH}"
@@ -48,8 +50,12 @@ jobs:
           # somehow env vars where missing in the yq action, so we reassign them
           ENTRY: ${{ github.event.client_payload.entry }}
           VERSION: ${{ github.event.client_payload.version }}
+          PREVIEW: ${{ github.event.client_payload.preview }}
           IMAGE: ${{ github.event.client_payload.image }}
-          MANIFEST_PATH: catalog/${{ github.event.client_payload.entry }}/manifest.yaml
+          MANIFEST_PATH: >-
+            ${{ github.event.client_payload.preview == '1'
+                && format('catalog/_preview/{0}/manifest.yaml', github.event.client_payload.entry)
+                || format('catalog/{0}/manifest.yaml', github.event.client_payload.entry) }}
         with:
           cmd: |
             yq -i -I4 '.app.containerImage.image = strenv(IMAGE)' ${MANIFEST_PATH} && \
@@ -70,9 +76,16 @@ jobs:
 
           git checkout -b $BRANCH
 
-          git add catalog/${ENTRY}/manifest.yaml
-          git commit -m "Update ${ENTRY} to ${VERSION}"
+          git add ${MANIFEST_PATH}
+
+          if [ "$PREVIEW" = "1" ]; then
+            MSG="Update ${ENTRY} to ${VERSION} (Preview)"
+          else
+            MSG="Update ${ENTRY} to ${VERSION}"
+          fi
+
+          git commit -m "$MSG"
           git push -u origin $BRANCH
 
-          gh pr create --title "Update ${ENTRY} to ${VERSION}" --body "Automated PR from ${ENTRY} release" --base main
+          gh pr create --title "$MSG" --body "Automated PR from ${ENTRY} release" --base main
           gh pr merge --squash --auto

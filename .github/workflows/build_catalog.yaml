@@ -1,5 +1,5 @@
 ---
-name: Build Catalog
+name: Build Catalogs
 
 on:  # yamllint disable-line rule:truthy
   push:
@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   lint-yaml:
-    name: Build Catalog
+    name: Build Catalogs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -23,11 +23,14 @@ jobs:
       - name: Install Golang
         uses: actions/setup-go@v5
 
-      - name: Create Catalog Manifest
-        run: go run hack/create_catalog.go
-
       - name: Bundle schema.json
         run: cp schema.json catalog/schema.json
+
+      - name: Create Catalog Manifest
+        run: go run scripts/create_catalog.go
+
+      - name: Create Catalog Manifest (Preview)
+        run: go run scripts/_preview/create_catalog.go
 
       - name: Deploy To gh-pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4

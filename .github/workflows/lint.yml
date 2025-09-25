@@ -35,7 +35,7 @@ jobs:
 
       - name: Validate YAML
         run: |
-          for file in catalog/*/manifest.yaml; do
+          for file in catalog/**/manifest.yaml; do
             jv schema.json "$file" || exit 1
           done
 
@@ -48,7 +48,11 @@ jobs:
 
       - name: Check Icon Existence And Sizes
         run: |
-          for dir in catalog/*/; do
+          for dir in catalog/*/ catalog/_preview/*/; do
+            if [ "$(basename "$dir")" = "_preview" ]; then
+              continue
+            fi
+
             if [ ! -f "${dir}icon.png" ]; then
               echo "Error: ${dir} is missing icon.png"
               exit 1

@@ -22,6 +22,8 @@ This tells your service the actual URI (e.g. `BASE_PATH=cellname/appname` for `i
     * `catalog/your-app-name/manifest.yaml` is the manifest for the entry, which follows [schema.json](schema.json)
     * `catalog/your-app-name/icon.png` icon which will be shown in graphical app managers
 
+The same structure is mirrored in `catalog/_preview` for the preview store.
+
 ## Linting
 
 ### YAML linting
@@ -64,6 +66,7 @@ The following shows an example on how to trigger update jobs via curl:
 ```bash
 IMAGE="registry/imagename:1.2.3"
 VERSION="1.2.3"
+PREVIEW="0" # Set to 1 to publish in preview store
 ENTRY="entry-name"
 # needs token with "Contents" repository permissions (write)
 TOKEN="github_pat_..."
@@ -77,6 +80,7 @@ curl -L \
        \"client_payload\": {
          \"image\":\"${IMAGE}\",
          \"version\":\"${VERSION}\",
+         \"preview\":\"${PREVIEW}\",
          \"entry\":\"${ENTRY}\"
       }
     }"

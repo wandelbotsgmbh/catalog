@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://wandelbotsgmbh.github.io/catalog/schema.json
+---
+version: 0.0.2
+name: nova-example-app
+supportsCloud: true
+description: |
+  This is an example app. It only shows up in the Preview Store.
+homepage: https://wandelbots.com
+app:
+  name: nova-example-app
+  appIcon: app_icon.png
+  containerImage:
+    image: wandelbots.azurecr.io/development-nova-apps/nova-example-app:0.0.2
+    secrets:
+      - name: pull-secret-wandelbots-azurecr-io
+  port: 3100
+  storage:
+    mountPath: /media
+    capacity: 10Mi
