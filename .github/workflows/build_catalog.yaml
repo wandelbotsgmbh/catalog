@@ -32,6 +32,9 @@ jobs:
       - name: Create Catalog Manifest (Preview)
         run: go run scripts/_preview/create_catalog.go
 
+      - name: Add .nojekyll, so _preview is included in deployment
+        run: touch catalog/.nojekyll
+
       - name: Deploy To gh-pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         if: ${{ github.ref == 'refs/heads/main' }}

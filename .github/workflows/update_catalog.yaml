@@ -81,7 +81,7 @@ jobs:
           git add ${MANIFEST_PATH}
 
           if [ "$PREVIEW" = "1" ]; then
-            MSG="Update ${ENTRY} to ${VERSION} (Preview)"
+            MSG="Update ${ENTRY} to ${VERSION} (preview)"
           else
             MSG="Update ${ENTRY} to ${VERSION}"
           fi
