@@ -1,19 +1,19 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.0.8
+version: 0.0.9
 name: doom
 supportsCloud: true
 description: |
-  Doom (typeset as DOOM in official documents) is a 1993 science fiction
-  horror-themed first-person shooter (FPS) video game by id Software.
-  It is considered one of the most significant and influential titles in the video game industry,
-  for having ushered in the popularity of the first-person shooter genre.
+    Doom (typeset as DOOM in official documents) is a 1993 science fiction
+    horror-themed first-person shooter (FPS) video game by id Software.
+    It is considered one of the most significant and influential titles in the video game industry,
+    for having ushered in the popularity of the first-person shooter genre.
 homepage: https://www.idsoftware.com/de
 app:
-  name: doom
-  appIcon: app_icon.png
-  containerImage:
-    image: docker.io/andiikaa/doom:0.0.8
-    secrets:
-      - name: pull-secret-registry-1-docker-io
-  port: 8080
+    name: doom
+    appIcon: app_icon.png
+    containerImage:
+        image: docker.io/andiikaa/doom:0.0.8
+        secrets:
+            - name: pull-secret-registry-1-docker-io
+    port: 8080

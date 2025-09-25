@@ -3,7 +3,7 @@ schemaVersion: 0.0.1
 version: 0.0.1
 entries:
     - name: doom
-      version: 0.0.8
+      version: 0.0.9
     - name: jupyter
       version: 0.0.4
     - name: magma-p2p
