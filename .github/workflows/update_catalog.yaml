@@ -16,8 +16,10 @@ jobs:
       VERSION: ${{ github.event.client_payload.version }}
       IMAGE: ${{ github.event.client_payload.image }}
       PREVIEW: ${{ github.event.client_payload.preview }}
-      MANIFEST_PATH: catalog/${{ github.event.client_payload.entry }}/manifest.yaml
-
+      MANIFEST_PATH: >-
+        ${{ github.event.client_payload.preview == '1'
+            && format('catalog/_preview/{0}/manifest.yaml', github.event.client_payload.entry)
+            || format('catalog/{0}/manifest.yaml', github.event.client_payload.entry) }}
     steps:
       - uses: actions/checkout@v4
 
