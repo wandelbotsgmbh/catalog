@@ -4,6 +4,7 @@ version: 0.1.6
 beta: true
 # Remove the Beta label here as soon as the App Store supports `beta: true` above.
 name: Signals (Beta)
+novaOsVersion: ">= 25.3"
 supportsCloud: true
 description: |
   Monitor and control robot I/O signals.

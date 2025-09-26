@@ -3,6 +3,7 @@
 
 version: 1.0.0
 name: onrobotcomputebox
+novaOsVersion: ">= 25.3"
 supportsCloud: false
 homepage: https://www.onrobot.com/
 description: |

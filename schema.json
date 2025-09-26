@@ -21,6 +21,10 @@
       "description": "Version of the entry (e.g app version).",
       "type": "string"
     },
+    "novaOsVersion": {
+      "description": "Version constraint for the required NOVA OS version (e.g. '>= 25.4').",
+      "type": "string"
+    },
     "homepage": {
       "description": "URL to the homepage or github repository with detailed information.",
       "type": "string"

@@ -2,6 +2,7 @@
 ---
 version: 0.0.2
 name: nova-example-app
+novaOsVersion: ">= 25.3"
 supportsCloud: true
 description: |
     This is an example app. It only shows up in the Preview Store.

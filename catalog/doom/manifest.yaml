@@ -2,6 +2,7 @@
 ---
 version: 0.0.8
 name: doom
+novaOsVersion: ">= 25.3"
 supportsCloud: true
 description: |
     Doom (typeset as DOOM in official documents) is a 1993 science fiction
