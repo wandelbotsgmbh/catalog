@@ -39,6 +39,35 @@ jobs:
             jv schema.json "$file" || exit 1
           done
 
+  validate-image-tags:
+    name: Validate image tags match version specified in manifest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install yq
+        uses: mikefarah/yq@v4.47.2
+
+      - name: Validate Image Tags
+        run: |
+          shopt -s globstar
+          for file in catalog/**/manifest.yaml; do
+
+            # Leave this one exception till there is a preview version
+            # of a regular app
+            if [[ "$file" == *"doom/manifest.yaml"* ]]; then
+              continue
+            fi
+
+            VERSION=$(yq e '.version' "$file")
+            IMAGE=$(yq e '.app.containerImage.image' "$file")
+            if [[ "$IMAGE" != *":$VERSION" ]]; then
+              echo "Error: Image tag in $file does not match version. Expected tag $VERSION in image $IMAGE"
+              exit 1
+            fi
+          done
+
   check-image:
     name: Check Icons
     runs-on: ubuntu-latest
