@@ -2,6 +2,7 @@
 ---
 version: 2.19.0
 name: nova-rerun-bridge
+novaOsVersion: ">= 25.3"
 supportsCloud: true
 description: |
     Collects all planned motions and serves a rrd file which can

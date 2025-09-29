@@ -2,6 +2,7 @@
 ---
 version: 0.1.3
 name: doom
+novaOsVersion: ">= 25.3"
 supportsCloud: true
 description: |
   This a new version of the DOOM game, which only shows up in the Preview Store.
