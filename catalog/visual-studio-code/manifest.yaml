@@ -2,6 +2,7 @@
 ---
 version: 0.0.39
 name: Visual Studio Code (Beta)
+novaOsVersion: ">= 25.3"
 supportsCloud: true
 description: |
   A development IDE with the Wandelbots NOVA SDK

@@ -2,6 +2,7 @@
 ---
 version: 2.19.0
 name: rerun
+novaOsVersion: ">= 25.3"
 supportsCloud: true
 description: |
     Rerun is building the multimodal data stack to model,

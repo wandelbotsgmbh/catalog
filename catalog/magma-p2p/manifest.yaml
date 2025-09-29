@@ -2,6 +2,7 @@
 ---
 version: 0.0.8
 name: MAGMA-P2P
+novaOsVersion: ">= 25.3"
 supportsCloud: true
 description: |
     Plans collision free p2p movements based on the MAGMA library.
