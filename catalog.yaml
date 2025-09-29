@@ -5,7 +5,7 @@ entries:
     - name: doom
       version: 0.0.8
     - name: jupyter
-      version: 0.0.4
+      version: 0.0.5
     - name: magma-p2p
       version: 0.0.8
     - name: nova-rerun-bridge

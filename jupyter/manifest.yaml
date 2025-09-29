@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.0.4
+version: 0.0.5
 name: jupyter
 novaOsVersion: ">= 25.3"
 supportsCloud: true
