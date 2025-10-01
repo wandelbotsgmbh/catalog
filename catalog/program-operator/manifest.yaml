@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 1.5.0
+version: 1.10.0
 name: Program Operator (Beta)
 novaOsVersion: ">= 25.3"
 supportsCloud: true
@@ -12,7 +12,7 @@ app:
   name: program-operator
   appIcon: app_icon.png
   containerImage:
-    image: wandelbots.azurecr.io/nova-apps/program-operator:1.5.0
+    image: wandelbots.azurecr.io/nova-apps/program-operator:1.10.0
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
   port: 3000
