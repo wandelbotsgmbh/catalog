@@ -1,7 +1,8 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/wandelbotsgmbh/catalog/refs/heads/main/schema.json
+# yaml-language-server: $schema=../../schema.json
 ---
 version: 0.0.9
 name: webdav
+novaOsVersion: ">= 25.3"
 supportsCloud: true
 description: |
   Provides the WebDAV protocols for reading/writing files.

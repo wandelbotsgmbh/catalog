@@ -2,6 +2,7 @@
 ---
 version: 0.0.13
 name: suhner-efcm
+novaOsVersion: ">= 25.3"
 supportsCloud: false
 description: |
     The EFCm-02 is a compact, modular compliance system designed to seamlessly switch tools or heads
