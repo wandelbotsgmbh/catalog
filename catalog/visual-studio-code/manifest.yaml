@@ -1,9 +1,10 @@
 # yaml-language-server: $schema=../../schema.json
 ---
 version: 0.0.41
-name: Visual Studio Code (Beta)
+name: Visual Studio Code
 novaOsVersion: ">= 25.3"
 supportsCloud: true
+beta: true
 description: |
   A development IDE with the Wandelbots NOVA SDK
 homepage: https://github.com/wandelbotsgmbh
