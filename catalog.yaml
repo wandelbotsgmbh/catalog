@@ -15,7 +15,7 @@ entries:
     - name: program-operator
       version: 1.10.0
     - name: rerun
-      version: 2.20.3
+      version: 2.20.4
     - name: sensopart-visor
       version: 0.0.7
     - name: signals
