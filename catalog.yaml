@@ -14,16 +14,19 @@ entries:
       version: 1.0.0
     - name: program-operator
       version: 1.10.0
+      beta: true
     - name: rerun
       version: 3.0.2
     - name: sensopart-visor
       version: 0.0.7
     - name: signals
       version: 0.1.6
+      beta: true
     - name: suhner-efcm
       version: 0.0.13
     - name: visual-studio-code
       version: 0.0.41
+      beta: true
     - name: webdav
       version: 0.0.9
     - name: zivid-intel
