@@ -9,11 +9,11 @@ entries:
     - name: magma-p2p
       version: 0.0.8
     - name: nova-rerun-bridge
-      version: 3.4.3
+      version: 3.5.0
     - name: onrobotcomputebox
       version: 1.0.0
     - name: program-operator
-      version: 1.13.1
+      version: 1.15.0
       beta: true
     - name: rerun
       version: 3.5.0
