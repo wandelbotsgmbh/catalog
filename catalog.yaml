@@ -13,7 +13,7 @@ entries:
     - name: onrobotcomputebox
       version: 1.0.0
     - name: program-operator
-      version: 1.15.2
+      version: 1.16.0
       beta: true
     - name: rerun
       version: 3.5.4
