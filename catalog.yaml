@@ -16,7 +16,7 @@ entries:
       version: 1.17.0
       beta: true
     - name: rerun
-      version: 3.6.0
+      version: 3.6.1
     - name: sensopart-visor
       version: 0.0.7
     - name: signals
