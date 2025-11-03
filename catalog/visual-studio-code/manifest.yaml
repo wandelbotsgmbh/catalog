@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.0.44
+version: 0.0.45
 name: Visual Studio Code
 novaOsVersion: ">= 25.3"
 supportsCloud: true
@@ -12,7 +12,7 @@ app:
   name: visual-studio-code
   appIcon: app_icon.png
   containerImage:
-    image: wandelbots.azurecr.io/nova-apps/visual-studio-code:0.0.44
+    image: wandelbots.azurecr.io/nova-apps/visual-studio-code:0.0.45
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
   port: 3001
