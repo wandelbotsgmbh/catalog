@@ -6,6 +6,8 @@ entries:
       version: 0.0.8
     - name: jupyter
       version: 0.0.5
+    - name: license-helper
+      version: 1.0.1
     - name: magma-p2p
       version: 0.0.8
     - name: nova-rerun-bridge
