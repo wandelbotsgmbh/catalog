@@ -6,8 +6,8 @@ novaOsVersion: ">= 25.9"
 supportsCloud: true
 homepage: https://www.wandelbots.com
 description: |
-  License Helper provides a clean, user-friendly interface for viewing and managing 
-  Wandelbots NOVA licenses. Features include license status monitoring, grace period 
+  License Helper provides a clean, user-friendly interface for viewing and managing
+  Wandelbots NOVA licenses. Features include license status monitoring, grace period
   tracking, and one-click license deactivation for both local NOVA nodes and cloud instances.
 app:
   name: license-helper
@@ -17,3 +17,4 @@ app:
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
   port: 3000
+  
