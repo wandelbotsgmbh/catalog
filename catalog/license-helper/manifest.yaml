@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../../schema.json
+---
+version: 1.0.1
+name: license-helper
+novaOsVersion: ">= 25.9"
+supportsCloud: true
+homepage: https://www.wandelbots.com
+description: |
+  License Helper provides a clean, user-friendly interface for viewing and managing
+  Wandelbots NOVA licenses. Features include license status monitoring, grace period
+  tracking, and one-click license deactivation for both local NOVA nodes and cloud instances.
+app:
+  name: license-helper
+  appIcon: app_icon.png
+  containerImage:
+    image: wandelbots.azurecr.io/nova-apps/license-helper:1.0.1
+    secrets:
+      - name: pull-secret-wandelbots-azurecr-io
+  port: 3000
