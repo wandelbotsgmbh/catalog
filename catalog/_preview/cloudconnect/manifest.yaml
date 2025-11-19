@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://wandelbotsgmbh.github.io/catalog/schema.json
+---
+version: 0.0.3
+name: cloudconnect
+novaOsVersion: ">= 25.3"
+supportsCloud: true
+description: |
+    Preview of the NOVA Cloud connector app, which allows connecting robot cells to the cloud.
+homepage: https://novacloud.dev.wandelbots.io
+app:
+    name: cloudconnect
+    appIcon: app_icon.svg
+    containerImage:
+        image: wandelbots.azurecr.io/novacloud/cloudconnect:0.0.3
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 5050

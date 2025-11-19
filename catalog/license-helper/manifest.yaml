@@ -1,5 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
+
 version: 1.1.0
 name: license-helper
 novaOsVersion: ">= 25.9"
