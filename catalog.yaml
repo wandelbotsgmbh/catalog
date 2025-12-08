@@ -22,7 +22,7 @@ entries:
     - name: sensopart-visor
       version: 0.0.7
     - name: signals
-      version: 0.1.6
+      version: 0.2.0
       beta: true
     - name: suhner-efcm
       version: 0.0.13
