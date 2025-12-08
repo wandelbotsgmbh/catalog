@@ -1,10 +1,10 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.1.6
+version: 0.2.0
 beta: true
 # Remove the Beta label here as soon as the App Store supports `beta: true` above.
 name: Signals (Beta)
-novaOsVersion: ">= 25.3"
+novaOsVersion: ">= 25.10"
 supportsCloud: true
 description: |
   Monitor and control robot I/O signals.
@@ -13,7 +13,7 @@ app:
   name: signals
   appIcon: app_icon.png
   containerImage:
-    image: wandelbots.azurecr.io/nova-apps/signals-app:0.1.6
+    image: wandelbots.azurecr.io/nova-apps/signals-app:0.2.0
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
   port: 3000
