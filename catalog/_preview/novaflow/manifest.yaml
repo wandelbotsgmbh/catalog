@@ -5,8 +5,8 @@ name: novaflow-installer
 novaOsVersion: ">= 25.3"
 supportsCloud: true
 description: |
-  NovaFlow is a visual programming tool that allows users to create automation workflows using a drag-and-drop interface.
-homepage: https://wandelbots.com
+  NovaFlow is a visual programming tool that allows users to create automation
+  workflows using a drag-and-drop interface.homepage: https://wandelbots.com
 app:
   name: novaflow-installer
   appIcon: "static/app_icon.png"
