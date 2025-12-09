@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://wandelbotsgmbh.github.io/catalog/schema.json
+---
+version: 0.2.0
+name: novaflow-installer
+novaOsVersion: ">= 25.3"
+supportsCloud: true
+description: |
+  NovaFlow is a visual programming tool that allows users to create automation workflows using a drag-and-drop interface.
+homepage: https://wandelbots.com
+app:
+  name: novaflow-installer
+  appIcon: "static/app_icon.png"
+  environment:
+    - name: PORT
+      value: 8000
+  containerImage:
+    image: wandelbots.azurecr.io/ba/novaflow_installer:0.0.5
+    secrets:
+      - name: pull-secret-wandelbots-azurecr-io
+  port: 8000
