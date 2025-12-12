@@ -9,4 +9,4 @@ entries:
     - name: nova-example-app
       version: 0.0.2
     - name: novaflow
-      version: 0.0.5
+      version: 0.0.6
