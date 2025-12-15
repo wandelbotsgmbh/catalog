@@ -15,7 +15,7 @@ app:
         - name: PORT
           value: "8000"
     containerImage:
-        image: wandelbots.azurecr.io/ba/novaflow_installer:0.0.6
+        image: wandelbots.azurecr.io/ba/novaflow_installer:0.0.7
         secrets:
             - name: pull-secret-wandelbots-azurecr-io
     port: 8000
