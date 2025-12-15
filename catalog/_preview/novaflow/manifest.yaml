@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://wandelbotsgmbh.github.io/catalog/schema.json
 ---
-version: 0.0.6
+version: 0.0.7
 name: novaflow-installer
 novaOsVersion: ">= 25.3"
 supportsCloud: true
