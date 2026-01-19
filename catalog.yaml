@@ -27,7 +27,7 @@ entries:
     - name: suhner-efcm
       version: 0.0.13
     - name: visual-studio-code
-      version: 0.0.48
+      version: 0.0.49
       beta: true
     - name: webdav
       version: 0.0.9
