@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=../../schema.json
+---
+version: 1.0.0
+name: Fine-Tuning Mobile (Alpha)
+novaOsVersion: ">= 25.10"
+supportsCloud: true
+beta: true
+description: |
+  Fine-Tuning Mobile is a mobile app for fine-tuning poses and trajectories on NOVA.
+homepage: https://github.com/wandelbotsgmbh
+app:
+  name: fine-tuning-mobile
+  appIcon: app_icon.png
+  containerImage:
+    image: wandelbots.azurecr.io/nova-apps/fine-tuning-mobile:1.0.0
+    secrets:
+      - name: pull-secret-wandelbots-azurecr-io
+  port: 80
