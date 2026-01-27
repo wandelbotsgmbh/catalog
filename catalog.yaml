@@ -4,6 +4,9 @@ version: 0.0.1
 entries:
     - name: doom
       version: 0.0.8
+    - name: fine-tuning-mobile
+      version: 1.0.0
+      beta: true
     - name: jupyter
       version: 0.0.5
     - name: license-helper
