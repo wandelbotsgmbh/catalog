@@ -27,7 +27,7 @@ entries:
     - name: suhner-efcm
       version: 0.0.13
     - name: touch-up
-      version: 1.3.0
+      version: 1.6.1
       beta: true
     - name: visual-studio-code
       version: 0.0.49
