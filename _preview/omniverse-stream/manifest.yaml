@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://wandelbotsgmbh.github.io/catalog/schema.json
 ---
-version: 1.6.5
+version: 1.6.6
 name: omniverse-stream
 novaOsVersion: ">= 25.3"
 supportsCloud: true
@@ -16,7 +16,7 @@ app:
         - name: OMNIVERSE_STREAM_BASE_URL
           value: https://api.omni.gpucluster-dev.wandelbots.io
     containerImage:
-        image: wandelbots.azurecr.io/nova-apps/omniverse-stream-app:1.6.5
+        image: wandelbots.azurecr.io/nova-apps/omniverse-stream-app:1.6.6
         secrets:
             - name: pull-secret-wandelbots-azurecr-io
     port: 3000
