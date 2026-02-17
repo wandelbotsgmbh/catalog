@@ -6,6 +6,7 @@ name: interactive-python-tutorial(BETA)
 novaOsVersion: ">= 26.1.0"
 supportsCloud: true
 homepage: https://www.wandelbots.com
+beta: true
 description: |
   Python Tutorial App provides an interactive and engaging way to get started with the Wandelbots NOVA Python SDK.
   Through small, game-like challenges, users learn how to control and move the robot using Python.
