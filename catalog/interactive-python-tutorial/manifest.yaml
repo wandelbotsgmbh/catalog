@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../../schema.json
 ---
 
-version: 0.0.5
+version: 1.0.0
 name: interactive-python-tutorial (Beta)
 novaOsVersion: ">= 26.1.0"
 supportsCloud: true
@@ -15,7 +15,7 @@ app:
   name: interactive-python-tutorial
   appIcon: app_icon.png
   containerImage:
-    image: wandelbots.azurecr.io/nova-apps/interactive-python-tutorial:0.0.5
+    image: wandelbots.azurecr.io/nova-apps/interactive-python-tutorial:1.0.0
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
   port: 3000
