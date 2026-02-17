@@ -5,7 +5,7 @@ entries:
     - name: doom
       version: 0.0.8
     - name: interactive-python-tutorial
-      version: 0.0.5
+      version: 1.0.0
       beta: true
     - name: jupyter
       version: 0.0.5
