@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=../../schema.json
+---
+
+version: 0.0.5
+name: interactive-python-tutorial(BETA)
+novaOsVersion: ">= 26.1.0"
+supportsCloud: true
+homepage: https://www.wandelbots.com
+description: |
+  Python Tutorial App provides an interactive and engaging way to get started with the Wandelbots NOVA Python SDK.
+  Through small, game-like challenges, users learn how to control and move the robot using Python.
+  The app combines hands-on coding exercises with playful robot tasks, making it easy and fun to understand NOVA.
+app:
+  name: interactive-python-tutorial(BETA)
+  appIcon: app_icon.png
+  containerImage:
+    image: wandelbots.azurecr.io/nova-apps/interactive-python-tutorial:0.0.5
+    secrets:
+      - name: pull-secret-wandelbots-azurecr-io
+  port: 3000
