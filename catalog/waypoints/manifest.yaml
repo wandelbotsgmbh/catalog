@@ -5,7 +5,7 @@ name: Waypoints (PREALPHA)
 novaOsVersion: ">= 25.10"
 supportsCloud: true
 description: |
-  Waypoints app for creating and managing waypoints in NOVA.
+  Waypoints app for creating and managing waypoints in NOVA
 homepage: https://github.com/wandelbotsgmbh
 app:
   name: waypoints
