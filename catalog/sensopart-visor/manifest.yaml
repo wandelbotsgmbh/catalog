@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.0.7
+version: 0.1.0
 name: Sensopart VISOR
 novaOsVersion: ">= 25.3"
 supportsCloud: false
@@ -11,7 +11,7 @@ app:
     name: sensopart-visor
     appIcon: app_icon.png
     containerImage:
-        image: wandelbots.azurecr.io/nova-apps/sensopart-visor:0.0.7
+        image: wandelbots.azurecr.io/nova-apps/sensopart-visor:0.1.0
         secrets:
             - name: pull-secret-wandelbots-azurecr-io
     port: 3000
