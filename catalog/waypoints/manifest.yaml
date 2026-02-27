@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=../../schema.json
 ---
-version: 0.7.0
+version: 0.8.0
 name: Waypoints (PREALPHA)
 novaOsVersion: ">= 25.10"
 supportsCloud: true
@@ -11,7 +11,7 @@ app:
   name: waypoints
   appIcon: app_icon.png
   containerImage:
-    image: wandelbots.azurecr.io/nova-apps/waypoints:0.7.0
+    image: wandelbots.azurecr.io/nova-apps/waypoints:0.8.0
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
   port: 8003
