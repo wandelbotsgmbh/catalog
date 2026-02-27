@@ -36,7 +36,7 @@ entries:
       version: 0.0.49
       beta: true
     - name: waypoints
-      version: 0.7.0
+      version: 0.8.0
     - name: webdav
       version: 0.0.9
     - name: zivid-intel
