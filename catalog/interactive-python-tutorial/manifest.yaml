@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=../../schema.json
 ---
 
-version: 1.0.0
+version: 1.0.1
 name: interactive-python-tutorial (Beta)
 novaOsVersion: ">= 26.1.0"
 supportsCloud: true
