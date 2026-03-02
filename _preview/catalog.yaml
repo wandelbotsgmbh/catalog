@@ -11,4 +11,4 @@ entries:
     - name: novaflow
       version: 2026.02.16
     - name: omniverse-stream
-      version: 1.6.6
+      version: 1.7.0
