@@ -32,6 +32,9 @@ entries:
     - name: touch-up
       version: 1.6.1
       beta: true
+    - name: trajectory-cursor
+      version: 0.0.1
+      beta: true
     - name: visual-studio-code
       version: 0.0.49
       beta: true
