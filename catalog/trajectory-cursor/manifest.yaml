@@ -3,7 +3,7 @@
 version: 0.0.1
 name: Trajectory Cursor (Alpha)
 novaOsVersion: ">= 25.10"
-supportsCloud: true
+supportsCloud: false
 beta: true
 description: |
   Jog a robot along a pre-planned trajectory using a cursor.
