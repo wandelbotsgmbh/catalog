@@ -26,9 +26,6 @@ entries:
       version: 0.1.0
     - name: suhner-efcm
       version: 0.0.13
-    - name: touch-up
-      version: 1.6.1
-      beta: true
     - name: trajectory-cursor
       version: 0.0.1
       beta: true
@@ -36,7 +33,7 @@ entries:
       version: 0.0.49
       beta: true
     - name: waypoints
-      version: 0.9.0
+      version: 0.20.0
     - name: webdav
       version: 0.0.9
     - name: zivid-intel
