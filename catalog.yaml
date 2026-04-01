@@ -2,8 +2,6 @@
 schemaVersion: 0.0.1
 version: 0.0.1
 entries:
-    - name: doom
-      version: 0.0.8
     - name: interactive-python-tutorial
       version: 1.0.3
       beta: true
@@ -11,12 +9,8 @@ entries:
       version: 0.0.5
     - name: license-helper
       version: 1.1.2
-    - name: magma-p2p
-      version: 0.0.8
     - name: nova-rerun-bridge
       version: 3.6.7
-    - name: onrobotcomputebox
-      version: 1.0.0
     - name: program-operator
       version: 1.17.7
       beta: true
