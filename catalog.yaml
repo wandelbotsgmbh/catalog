@@ -12,7 +12,7 @@ entries:
     - name: nova-rerun-bridge
       version: 3.6.7
     - name: program-operator
-      version: 1.17.7
+      version: 1.17.8
       beta: true
     - name: rerun
       version: 3.6.7
