@@ -24,8 +24,6 @@ entries:
       version: 3.6.7
     - name: sensopart-visor
       version: 0.1.0
-    - name: suhner-efcm
-      version: 0.0.13
     - name: trajectory-cursor
       version: 0.0.1
       beta: true
@@ -33,8 +31,6 @@ entries:
       version: 0.0.49
       beta: true
     - name: waypoints
-      version: 0.22.0
-    - name: webdav
-      version: 0.0.9
+      version: 0.23.0
     - name: zivid-intel
       version: 2.3.0
