@@ -15,7 +15,7 @@ entries:
     - name: sensopart-visor
       version: 0.1.0
     - name: trajectory-cursor
-      version: 0.0.1
+      version: 0.0.2
       beta: true
     - name: visual-studio-code
       version: 0.0.49
