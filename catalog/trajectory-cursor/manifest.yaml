@@ -18,4 +18,3 @@ app:
     secrets:
       - name: pull-secret-wandelbots-azurecr-io
   port: 3000
-g
