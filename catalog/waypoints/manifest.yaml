@@ -17,4 +17,4 @@ app:
   port: 8003
   storage:
     mountPath: /data
-    capacity: 1Gi
+    capacity: 300Mi
