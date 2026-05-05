@@ -5,7 +5,7 @@ name: webrtc-viewer
 novaOsVersion: ">= 25.3"
 supportsCloud: true
 description: |
-    WebRTC Viewer is a lightweight application that allows you to view WebRTC video streams. It is designed for low latency and high performance, making it ideal for applications such as remote monitoring, video conferencing, and live streaming.
+    WebRTC Viewer is a lightweight application that allows you to view WebRTC video streams.
 homepage: https://wandelbots.com
 app:
     name: webrtc-viewer
