@@ -10,3 +10,5 @@ entries:
       version: 2026.04.05
     - name: omniverse-stream
       version: 1.8.0
+    - name: webrtc-viewer
+      version: 0.0.1
