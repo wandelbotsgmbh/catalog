@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://wandelbotsgmbh.github.io/catalog/schema.json
+---
+version: 0.0.1
+name: webrtc-viewer
+novaOsVersion: ">= 25.3"
+supportsCloud: true
+description: |
+    WebRTC Viewer is a lightweight application that allows you to view WebRTC video streams.
+homepage: https://wandelbots.com
+app:
+    name: webrtc-viewer
+    appIcon: app_icon.png
+    containerImage:
+        image: wandelbots.azurecr.io/apps/webrtc-viewer:0.0.1
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 8000
