@@ -10,8 +10,6 @@ entries:
       version: 0.0.6
     - name: novaflow
       version: 2026.04.05
-    - name: omniverse-camera
-      version: 0.1.0
     - name: omniverse-stream
       version: 1.8.0
     - name: webrtc-viewer
