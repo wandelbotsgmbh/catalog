@@ -6,18 +6,18 @@ novaOsVersion: ">= 25.3"
 supportsCloud: false
 beta: true
 description: |
-  Unified camera manager for Nova. View and control multiple camera
-  sources (Intel RealSense, Omniverse Isaac Sim) through a single
-  interface with live WebRTC streaming, multi-stream support, and
-  per-provider settings. Hash-based URL routing preserves view state
-  across page refreshes. Policy Executor code snippets with
-  copy-to-clipboard in both provider and device views.
+    Unified camera manager for Nova. View and control multiple camera
+    sources (Intel RealSense, Omniverse Isaac Sim) through a single
+    interface with live WebRTC streaming, multi-stream support, and
+    per-provider settings. Hash-based URL routing preserves view state
+    across page refreshes. Policy Executor code snippets with
+    copy-to-clipboard in both provider and device views.
 homepage: https://code.wabo.run/ai/physical-ai
 app:
-  name: cameras
-  appIcon: app_icon.svg
-  containerImage:
-    image: wandelbots.azurecr.io/eai/cameras:0.9.0
-    secrets:
-      - name: pull-secret-wandelbots-azurecr-io
-  port: 80
+    name: cameras
+    appIcon: app_icon.svg
+    containerImage:
+        image: wandelbots.azurecr.io/eai/cameras:0.9.0
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 80
