@@ -7,7 +7,7 @@ entries:
     - name: doom
       version: 0.1.3
     - name: nats-viewer
-      version: 0.1.7.1
+      version: 0.1.8
     - name: nova-example-app
       version: 0.0.6
     - name: novaflow
