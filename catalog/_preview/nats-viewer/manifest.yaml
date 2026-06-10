@@ -9,7 +9,7 @@ description: |
 homepage: https://www.wandelbots.com
 app:
   name: nats-message-viewer
-  appIcon: static/app_icon.png
+  appIcon: static/app_icon.svg
   containerImage:
     image: wandelbots.azurecr.io/development-nova-apps/nats-message-viewer:0.1.7.1
   port: 8000
