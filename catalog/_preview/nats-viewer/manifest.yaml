@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://wandelbotsgmbh.github.io/catalog/schema.json
 ---
-version: 0.1.7.1
+version: 0.1.8
 name: nats-message-viewer
 novaOsVersion: ">= 25.3"
 supportsCloud: true
