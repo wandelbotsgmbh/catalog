@@ -11,5 +11,5 @@ app:
   name: nats-message-viewer
   appIcon: static/app_icon.svg
   containerImage:
-    image: wandelbots.azurecr.io/development-nova-apps/nats-message-viewer:0.1.7.1
+    image: wandelbots.azurecr.io/nova-apps/nats-message-viewer:0.1.8
   port: 8000
