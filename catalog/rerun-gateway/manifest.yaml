@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=../../schema.json
+---
+version: 1.1.2
+name: rerun-gateway
+beta: true
+supportsCloud: true
+description: |
+  Rerun Gateway is a shared visualization server deployed as a Wandelbots App.
+  Any pod in the cluster can log data to it via gRPC, and the web viewer is
+  accessible through the platform dashboard.
+homepage: https://code.wabo.run/andrey.sartison/rerun-gateway
+app:
+  name: rerun-gateway
+  appIcon: app-icon.png
+  containerImage:
+    image: wandelbots.azurecr.io/nova-apps/rerun-gateway:1.1.2
+    secrets:
+      - name: pull-secret-wandelbots-azurecr-io
+  port: 8080
+  resources:
+    memory-limit: 2000Mi
