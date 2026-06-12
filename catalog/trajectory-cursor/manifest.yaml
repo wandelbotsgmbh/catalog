@@ -6,15 +6,15 @@ novaOsVersion: ">= 25.10"
 supportsCloud: true
 beta: true
 description: |
-  Jog a robot along a pre-planned trajectory using a cursor.
-  Exposes trajectory cursors over REST + NATS so clients can move a robot
-  forward and backward along a path with keepalive-based safety.
+    Jog a robot along a pre-planned trajectory using a cursor.
+    Exposes trajectory cursors over REST + NATS so clients can move a robot
+    forward and backward along a path with keepalive-based safety.
 homepage: https://github.com/wandelbotsgmbh
 app:
-  name: trajectory-cursor
-  appIcon: app_icon.png
-  containerImage:
-    image: wandelbots.azurecr.io/nova-apps/trajectory-cursor:0.1.1
-    secrets:
-      - name: pull-secret-wandelbots-azurecr-io
-  port: 3000
+    name: trajectory-cursor
+    appIcon: app_icon.png
+    containerImage:
+        image: wandelbots.azurecr.io/nova-apps/trajectory-cursor:0.1.1
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 3000
