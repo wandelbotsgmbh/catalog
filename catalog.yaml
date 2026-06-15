@@ -12,6 +12,9 @@ entries:
     - name: program-operator
       version: 1.17.8
       beta: true
+    - name: rerun-gateway
+      version: 1.1.2
+      beta: true
     - name: sensopart-visor
       version: 0.1.0
     - name: trajectory-cursor
