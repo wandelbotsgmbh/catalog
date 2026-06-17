@@ -11,6 +11,6 @@ entries:
     - name: nova-example-app
       version: 0.0.6
     - name: novaflow
-      version: 2026.04.05
+      version: 2026.6.80
     - name: omniverse-stream
       version: 1.8.0
