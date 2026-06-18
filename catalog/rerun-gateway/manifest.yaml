@@ -8,7 +8,7 @@ description: |
     Rerun Gateway is a shared visualization server deployed as a Wandelbots App.
     Any pod in the cluster can log data to it via gRPC, and the web viewer is
     accessible through the platform dashboard.
-homepage: https://code.wabo.run/andrey.sartison/rerun-gateway
+homepage: https://github.com/wandelbotsgmbh/rerun-gateway
 app:
     name: rerun-gateway
     appIcon: app-icon.png
