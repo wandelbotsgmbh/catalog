@@ -3,7 +3,7 @@
 version: 1.5.2
 name: cameras
 novaOsVersion: ">= 25.3"
-supportsCloud: false
+supportsCloud: true
 beta: true
 description: |
     Unified camera manager for Nova. View and control multiple camera
