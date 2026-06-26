@@ -1,9 +1,10 @@
 # yaml-language-server: $schema=../../schema.json
 ---
 version: 0.30.1
-name: Waypoints (PREALPHA)
+name: Waypoints
 novaOsVersion: ">= 25.10"
 supportsCloud: true
+beta: true
 description: |
   Waypoints app for creating and managing waypoints in NOVA
 homepage: https://github.com/wandelbotsgmbh

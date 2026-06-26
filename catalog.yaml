@@ -18,12 +18,13 @@ entries:
     - name: sensopart-visor
       version: 0.1.0
     - name: trajectory-cursor
-      version: 0.1.1
+      version: 0.4.0
       beta: true
     - name: visual-studio-code
       version: 0.0.49
       beta: true
     - name: waypoints
       version: 0.30.1
+      beta: true
     - name: zivid-intel
       version: 2.3.0
