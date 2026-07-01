@@ -16,7 +16,7 @@ entries:
       version: 1.1.2
       beta: true
     - name: sensopart-visor
-      version: 0.1.0
+      version: 0.2.0
     - name: trajectory-cursor
       version: 0.4.0
       beta: true
