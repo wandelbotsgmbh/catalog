@@ -3,7 +3,7 @@ schemaVersion: 0.0.1
 version: 0.0.1
 entries:
     - name: interactive-python-tutorial
-      version: 1.0.3
+      version: 2.0.0
       beta: true
     - name: jupyter
       version: 0.0.5
