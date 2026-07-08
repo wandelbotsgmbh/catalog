@@ -1,32 +1,32 @@
 # yaml-language-server: $schema=https://wandelbotsgmbh.github.io/catalog/schema.json
 ---
-version: 0.1.0
+version: 1.0.0
 name: nova-data-collection
 novaOsVersion: ">= 26.3"
 beta: true
 supportsCloud: true
 description: |
-  Record synchronized robot manipulation data with NOVA and Rerun. Captures robot
-  state, camera streams and IO signals during task execution into .rrd recordings,
-  with session/episode control and dataset listing via a web UI and REST API.
+    Record synchronized robot manipulation data with NOVA and Rerun. Captures robot
+    state, camera streams and IO signals during task execution into .rrd recordings,
+    with session/episode control and dataset listing via a web UI and REST API.
 homepage: https://code.wabo.run/ai/physical-ai/nova-data-collection
 app:
-  name: nova-data-collection
-  appIcon: static/app_icon.png
-  environment:
-    - name: PORT
-      value: "8080"
-    - name: LOG_LEVEL
-      value: "INFO"
-    - name: STORAGE_DIR
-      value: "/data/recordings"
-  containerImage:
-    image: wandelbots.azurecr.io/nova-apps/nova-data-collection:0.1.0
-    secrets:
-      - name: pull-secret-wandelbots-azurecr-io
-  port: 8080
-  storage:
-    mountPath: /data/recordings
-    capacity: 300Mi
-  resources:
-    memory-limit: 2000Mi
+    name: nova-data-collection
+    appIcon: static/app_icon.png
+    environment:
+        - name: PORT
+          value: "8080"
+        - name: LOG_LEVEL
+          value: "INFO"
+        - name: STORAGE_DIR
+          value: "/data/recordings"
+    containerImage:
+        image: wandelbots.azurecr.io/nova-services/nova-data-collection:1.0.0
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 8080
+    storage:
+        mountPath: /data/recordings
+        capacity: 300Mi
+    resources:
+        memory-limit: 2000Mi

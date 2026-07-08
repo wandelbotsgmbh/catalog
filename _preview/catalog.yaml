@@ -9,7 +9,7 @@ entries:
     - name: nats-viewer
       version: 0.1.9
     - name: nova-data-collection
-      version: 0.1.0
+      version: 1.0.0
     - name: nova-example-app
       version: 0.0.6
     - name: novaflow
