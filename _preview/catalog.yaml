@@ -3,7 +3,7 @@ schemaVersion: 0.0.1
 version: 0.0.1
 entries:
     - name: camera-calibration
-      version: 1.0.0
+      version: 1.0.1
     - name: cameras
       version: 1.6.0
     - name: doom
