@@ -1,0 +1,27 @@
+# yaml-language-server: $schema=https://wandelbotsgmbh.github.io/catalog/schema.json
+---
+version: 1.0.0
+name: camera-calibration
+novaOsVersion: ">= 25.3"
+supportsCloud: false
+beta: true
+description: |
+    Hand-eye camera calibration for Nova robot cells. Automatically plans and
+    executes a calibration routine, detects a ChArUco/chessboard target across
+    robot poses, and solves the camera-to-robot transform for both eye-to-hand
+    and eye-in-hand setups. Includes live Rerun visualization, calibration
+    quality metrics (rotation/translation error), and results persisted in Nova
+    that drop straight into a calibrated TCP. Camera streams are provided by the
+    Cameras app on the same Nova instance via WebRTC, so install that app too.
+homepage: https://code.wabo.run/ai/physical-ai/camera-calibration
+app:
+    name: camera-calibration
+    appIcon: app_icon.svg
+    containerImage:
+        image: wandelbots.azurecr.io/nova-apps/camera-calibration:1.0.0
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 7860
+    storage:
+        mountPath: /app/data
+        capacity: 300Mi
