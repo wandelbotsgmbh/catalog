@@ -21,5 +21,5 @@ app:
             - name: pull-secret-wandelbots-azurecr-io
     port: 3000
     storage:
-      mountPath: /data
-      capacity: 1Mi
+        mountPath: /data
+        capacity: 1Mi
