@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://wandelbotsgmbh.github.io/catalog/schema.json
 ---
-version: 1.10.1
+version: 1.10.1-auth0-1
 name: omniverse-stream
 novaOsVersion: ">= 25.3"
 supportsCloud: true
