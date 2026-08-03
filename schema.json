@@ -49,6 +49,11 @@
           "description": "Port on which the app is getting exposed from the container",
           "type": "integer"
         },
+        "healthPath": {
+          "description": "Relative HTTP path (no leading slash, like appIcon) that the platform probes for startup/readiness/liveness against the app container \u2014 e.g. a health endpoint served at '/health' is simply 'health'. When set, the app only counts as Ready/Running once this path responds, so users don't hit a gateway error right after install. When omitted, the pod is Ready as soon as the container starts.",
+          "type": "string",
+          "pattern": "^[^/]"
+        },
         "containerImage": {
           "description": "Details for the container image",
           "type": "object",
@@ -68,11 +73,15 @@
                     "type": "string"
                   }
                 },
-                "required": ["name"]
+                "required": [
+                  "name"
+                ]
               }
             }
           },
-          "required": ["image"]
+          "required": [
+            "image"
+          ]
         },
         "storage": {
           "description": "The path and capacity of a volume that retains data across application restarts. The maximal requestable capacity is 300Mi",
@@ -87,7 +96,10 @@
               "type": "string"
             }
           },
-          "required": ["mountPath", "capacity"]
+          "required": [
+            "mountPath",
+            "capacity"
+          ]
         },
         "resources": {
           "description": "Additional resources that the application requires",
@@ -106,7 +118,12 @@
           }
         }
       },
-      "required": ["name", "appIcon", "port", "containerImage"]
+      "required": [
+        "name",
+        "appIcon",
+        "port",
+        "containerImage"
+      ]
     },
     "dependencies": {
       "description": "List of dependencies for the app",
@@ -119,9 +136,17 @@
             "type": "string"
           }
         },
-        "required": ["name"]
+        "required": [
+          "name"
+        ]
       }
     }
   },
-  "required": ["name", "description", "version", "homepage", "app"]
+  "required": [
+    "name",
+    "description",
+    "version",
+    "homepage",
+    "app"
+  ]
 }
