@@ -50,8 +50,9 @@
           "type": "integer"
         },
         "healthPath": {
-          "description": "Relative HTTP path (no leading slash) the platform probes for startup/readiness/liveness, resolved as <urlPath>/<healthPath> against the app container. When set, the app only counts as Ready/Running once this path responds \u2014 recommended so users don't hit a gateway error right after install. When omitted, the pod is Ready as soon as the container starts.",
-          "type": "string"
+          "description": "Relative HTTP path (no leading slash, like appIcon) that the platform probes for startup/readiness/liveness against the app container \u2014 e.g. a health endpoint served at '/health' is simply 'health'. When set, the app only counts as Ready/Running once this path responds, so users don't hit a gateway error right after install. When omitted, the pod is Ready as soon as the container starts.",
+          "type": "string",
+          "pattern": "^[^/]"
         },
         "containerImage": {
           "description": "Details for the container image",
