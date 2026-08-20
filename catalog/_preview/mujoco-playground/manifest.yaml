@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://wandelbotsgmbh.github.io/catalog/schema.json
+---
+version: 0.1.47
+name: mujoco-playground
+novaOsVersion: ">= 26.3"
+supportsCloud: false
+beta: true
+description: |
+    Simulate a cell in MuJoCo. Scenes are opened from an Omniverse Nucleus
+    server, converted in the pod, and rendered in the browser by MuJoCo
+    Studio compiled to WebAssembly. Robots in the scene follow the live
+    joint state of their NOVA controllers, cameras are served over WebRTC,
+    and an Omniverse-compatible API exposes the simulated cell.
+    NOTE: This preview app is experimental and only available Wandelbots internal.
+homepage: https://github.com/wandelbotsgmbh/nova-mujoco-playground
+app:
+    name: mujoco-playground
+    appIcon: app_icon.png
+    environment:
+        - name: CELL_NAME
+          value: cell
+        - name: NUCLEUS_URI
+          value: https://nucleus.wb.wandelbots.io
+    containerImage:
+        image: wandelbots.azurecr.io/nova-apps/mujoco-playground:0.1.47
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 3000
+    resources:
+        memory-limit: 6Gi
