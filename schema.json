@@ -33,6 +33,44 @@
       "description": "URL to the homepage or github repository with detailed information.",
       "type": "string"
     },
+    "vendor": {
+      "description": "Describes who makes the hard- or software this NOVA app integrates with",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Name of the vendor",
+          "type": "string"
+        },
+        "homepage": {
+          "description": "Website where more information about the vendor can be found",
+          "type": "string"
+        },
+        "email": {
+          "description": "If there is a support email for the vendor, it can be specified here",
+          "type": "string"
+        }
+      },
+      "required": ["name"]
+    },
+    "maintainer": {
+      "description": "Describes who is responsible for packaging and maintaining the NOVA app",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Name of maintainer, e.g. Wandelbots GmbH",
+          "type": "string"
+        },
+        "homepage": {
+          "description": "Website where more information about the maintainer can be found",
+          "type": "string"
+        },
+        "email": {
+          "description": "If there is a support email for the maintainer, it can be specified here",
+          "type": "string"
+        }
+      },
+      "required": ["name"]
+    },
     "app": {
       "description": "Specification for the app deployment",
       "type": "object",
