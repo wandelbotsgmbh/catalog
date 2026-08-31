@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://wandelbotsgmbh.github.io/catalog/schema.json
+# yaml-language-server: $schema=https://catalog.wandelbots.io/schema.json
 ---
 version: 1.0.0
 name: nova-data-collection
