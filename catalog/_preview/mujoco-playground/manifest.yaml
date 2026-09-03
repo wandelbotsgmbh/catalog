@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://catalog.wandelbots.io/schema.json
 ---
-version: 0.1.71
+version: 0.1.90
 name: mujoco-playground
 novaOsVersion: ">= 26.3"
 supportsCloud: false
@@ -22,7 +22,7 @@ app:
         - name: NUCLEUS_URI
           value: https://nucleus.wb.wandelbots.io
     containerImage:
-        image: wandelbots.azurecr.io/nova-apps/mujoco-playground:0.1.71
+        image: wandelbots.azurecr.io/nova-apps/mujoco-playground:0.1.90
         secrets:
             - name: pull-secret-wandelbots-azurecr-io
     port: 3000
