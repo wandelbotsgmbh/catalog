@@ -18,7 +18,7 @@ description: |
     controllers — by talking to it. The app's page renders the ready-to-copy
     connect commands with this instance's own URL. No motion: jogging and
     trajectory execution are deliberately not exposed.
-homepage: https://github.com/wandelbotsgmbh/nova-mcp
+homepage: https://wandelbots.com
 app:
     name: nova-mcp
     appIcon: app_icon.png
