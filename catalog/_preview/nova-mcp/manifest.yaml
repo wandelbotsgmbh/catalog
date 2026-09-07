@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://catalog.wandelbots.io/schema.json
+---
+# The folder name, this name, and app.name must all be "nova-mcp": the NOVA
+# app store identifies entries by the catalog name and matches it against the
+# installed app name for the installed-state and the post-install Running
+# poll — a mismatch makes the install dialog spin for its full 120s timeout
+# and the app never show as installed.
+version: 0.1.6
+name: nova-mcp
+beta: true
+novaOsVersion: ">= 26.0"
+supportsCloud: true
+description: |
+    Commission this instance with the AI assistant of your choice. nova-mcp
+    serves a Model Context Protocol (MCP) endpoint over the NOVA API, so any
+    MCP-capable assistant (Claude Code, GitHub Copilot, ...) can list and
+    inspect cells and robot controllers and create or delete virtual
+    controllers — by talking to it. The app's page renders the ready-to-copy
+    connect commands with this instance's own URL. No motion: jogging and
+    trajectory execution are deliberately not exposed.
+homepage: https://github.com/wandelbotsgmbh/nova-mcp
+app:
+    name: nova-mcp
+    appIcon: app_icon.png
+    containerImage:
+        image: wandelbots.azurecr.io/ba/nova-mcp:0.1.6
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 3000
