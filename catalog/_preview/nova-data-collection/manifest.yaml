@@ -4,7 +4,7 @@ version: 1.0.0
 name: nova-data-collection
 novaOsVersion: ">= 26.3"
 beta: true
-supportsCloud: true
+supportsCloud: false
 description: |
     Record synchronized robot manipulation data with NOVA and Rerun. Captures robot
     state, camera streams and IO signals during task execution into .rrd recordings,
@@ -27,6 +27,6 @@ app:
     port: 8080
     storage:
         mountPath: /data/recordings
-        capacity: 300Mi
+        capacity: 25Gi
     resources:
         memory-limit: 2000Mi
