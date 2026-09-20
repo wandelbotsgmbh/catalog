@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=../../schema.json
+---
+
+version: 1.0.0
+name: stacking-demo-nodejs
+novaOsVersion: ">= 26.6.0"
+supportsCloud: true
+homepage: https://www.wandelbots.com
+beta: true
+description: |
+  Python Tutorial App for stacking cubes similar to isaac-sim but without physics
+app:
+  name: stacking-demo-nodejs
+  appIcon: app_icon.png
+  containerImage:
+    image: wandelbots.azurecr.io/nova-apps/stacking-demo-nodejs:1.0.0
+    secrets:
+      - name: pull-secret-wandelbots-azurecr-io
+  port: 3000
