@@ -22,11 +22,6 @@ app:
     name: collision-world-editor
     appIcon: app_icon.svg
     healthPath: healthz
-    environment:
-        - name: CELL_NAME
-          value: cell
-        - name: NUCLEUS_URI
-          value: https://nucleus.wb.wandelbots.io
     containerImage:
         image: wandelbots.azurecr.io/nova-apps/collision-world-editor:0.1.0
         secrets:
