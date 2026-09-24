@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://catalog.wandelbots.io/schema.json
 ---
-version: 0.1.0
+version: 0.1.1
 name: collision-world-editor
 novaOsVersion: ">= 26.6"
 supportsCloud: true
@@ -22,13 +22,8 @@ app:
     name: collision-world-editor
     appIcon: app_icon.svg
     healthPath: healthz
-    environment:
-        - name: CELL_NAME
-          value: cell
-        - name: NUCLEUS_URI
-          value: https://nucleus.wb.wandelbots.io
     containerImage:
-        image: wandelbots.azurecr.io/nova-apps/collision-world-editor:0.1.0
+        image: wandelbots.azurecr.io/nova-apps/collision-world-editor:0.1.1
         secrets:
             - name: pull-secret-wandelbots-azurecr-io
     port: 3000
