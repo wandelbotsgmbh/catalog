@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=https://catalog.wandelbots.io/schema.json
+---
+version: 0.1.0
+name: collision-world-editor
+novaOsVersion: ">= 26.7"
+supportsCloud: false
+beta: true
+description: |
+    Build NOVA collision setups from OpenUSD scenes. Import a USD file, a zip
+    of a collected scene or a scene on an Omniverse Nucleus server; the app
+    picks the robot and its base, drops the robot itself, and fits efficient
+    collision shapes (boxes, spheres, convex hulls, CoACD decomposition for
+    concave parts - no mesh colliders), with an optional reach filter. The
+    gripper becomes tool geometry. A shape editor fixes the world and the tool,
+    a motion test proves the setup with collision-checked and collision-free
+    moves, and everything is stored in NOVA's collision store. Includes an
+    embedded Rerun viewer, a wandelbots-nova Python example for the current
+    setup, and an agent API (REST and MCP at /mcp).
+    NOTE: This preview app is experimental and only available Wandelbots internal.
+homepage: https://code.wabo.run/ai/physical-ai/collision-world-editor
+app:
+    name: collision-world-editor
+    appIcon: app_icon.svg
+    healthPath: healthz
+    environment:
+        - name: CELL_NAME
+          value: cell
+        - name: NUCLEUS_URI
+          value: https://nucleus.wb.wandelbots.io
+    containerImage:
+        image: wandelbots.azurecr.io/nova-apps/collision-world-editor:0.1.0
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 3000
+    resources:
+        memory-limit: 3Gi
