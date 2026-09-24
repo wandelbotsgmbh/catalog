@@ -2,8 +2,8 @@
 ---
 version: 0.1.0
 name: collision-world-editor
-novaOsVersion: ">= 26.7"
-supportsCloud: false
+novaOsVersion: ">= 26.6"
+supportsCloud: true
 beta: true
 description: |
     Build NOVA collision setups from OpenUSD scenes. Import a USD file, a zip
