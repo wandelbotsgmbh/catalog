@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://catalog.wandelbots.io/schema.json
+---
+version: 0.1.0
+name: cartograph
+novaOsVersion: ">= 25.3"
+supportsCloud: true
+description: |
+    Build and convert robot maps. cartograph turns an occupancy map into a Navitrol environment map
+    (env_*.nte) without the vendor's tooling, shows what the vehicle will get, and offers the same
+    conversions as an HTTP API, e.g. for Isaac Sim.
+    NOTE: This preview app is experimental and only available Wandelbots internal.
+homepage: https://github.com/wb-int/cartograph
+app:
+    name: cartograph
+    appIcon: icon.png
+    healthPath: healthz
+    containerImage:
+        image: wandelbots.azurecr.io/nova-apps/cartograph:0.1.0
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 3000
