@@ -4,6 +4,11 @@
 # whose only change is that entry's manifest.yaml, under catalog/ or
 # catalog/_preview/. This opens the pull request for it and lets it merge
 # once the checks pass, as update_catalog.yaml does for dispatches.
+#
+# A plain version bump of an existing entry (only `version` and the image's
+# tag changed, the tag equal to the version) is approved by this workflow, so
+# it merges by itself. Anything else waits for a person's review. Approving
+# needs "Allow GitHub Actions to create and approve pull requests".
 name: Update Catalog Entry From Branch
 
 on:  # yamllint disable-line rule:truthy
@@ -16,6 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -34,6 +40,30 @@ jobs:
             exit 1
           fi
 
+      - name: Is it a plain version bump?
+        id: bump
+        run: |
+          manifest=$(git diff --name-only origin/main...HEAD)
+          if [ "$(echo "$manifest" | wc -l)" -ne 1 ] || ! git cat-file -e "origin/main:$manifest" 2>/dev/null; then
+            echo "not one existing entry: needs a review"
+            echo "plain=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          strip='del(.version) | del(.app.containerImage.image)'
+          before=$(git show "origin/main:$manifest" | yq -o=json "$strip")
+          after=$(yq -o=json "$strip" "$manifest")
+          version=$(yq '.version' "$manifest")
+          image=$(yq '.app.containerImage.image' "$manifest")
+          repository_before=$(git show "origin/main:$manifest" | yq '.app.containerImage.image' | sed 's/:[^:]*$//')
+          if [ "$before" = "$after" ] && [ "${image##*:}" = "$version" ] \
+            && [ "${image%:*}" = "$repository_before" ]; then
+            echo "only the version moved, to $version, with its image: approved"
+            echo "plain=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "more than the version changed: needs a review"
+            echo "plain=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Open the pull request and merge it when the checks pass
         env:
           GH_TOKEN: ${{ secrets.PAT_FOR_UPDATE_ACTION }}
@@ -45,3 +75,10 @@ jobs:
               --body "Automated update pushed by the entry's own CI."
           fi
           gh pr merge "$BRANCH" --squash --auto --delete-branch
+
+      - name: Approve a plain version bump
+        if: steps.bump.outputs.plain == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.ref_name }}
+        run: gh pr review "$BRANCH" --approve --body "Only the version and its image tag changed."
