@@ -6,6 +6,8 @@ entries:
       version: 1.14.1
     - name: cameras
       version: 1.11.1
+    - name: cartograph
+      version: 0.3.4
     - name: collision-world-editor
       version: 0.2.2
     - name: doom
