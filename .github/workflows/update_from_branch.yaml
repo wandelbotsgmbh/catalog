@@ -1,0 +1,47 @@
+---
+# Apps that push their own catalog update instead of sending a dispatch:
+# their CI (with a deploy key) pushes a branch `update/<entry>-<version>`
+# whose only change is that entry's manifest.yaml, under catalog/ or
+# catalog/_preview/. This opens the pull request for it and lets it merge
+# once the checks pass, as update_catalog.yaml does for dispatches.
+name: Update Catalog Entry From Branch
+
+on:  # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - "update/**"
+
+jobs:
+  open-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Only an entry's manifest may change
+        run: |
+          changed=$(git diff --name-only origin/main...HEAD)
+          echo "$changed"
+          if [ -z "$changed" ]; then
+            echo "nothing changed against main"
+            exit 1
+          fi
+          if echo "$changed" | grep -vqE '^catalog/(_preview/)?[a-z0-9-]+/manifest\.yaml$'; then
+            echo "an update branch may only change catalog/[_preview/]<entry>/manifest.yaml"
+            exit 1
+          fi
+
+      - name: Open the pull request and merge it when the checks pass
+        env:
+          GH_TOKEN: ${{ secrets.PAT_FOR_UPDATE_ACTION }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          title=$(git log -1 --format=%s)
+          if ! gh pr view "$BRANCH" --json number > /dev/null 2>&1; then
+            gh pr create --head "$BRANCH" --base main --title "$title" \
+              --body "Automated update pushed by the entry's own CI."
+          fi
+          gh pr merge "$BRANCH" --squash --auto --delete-branch
