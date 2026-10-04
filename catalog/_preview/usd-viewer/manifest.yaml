@@ -27,4 +27,4 @@ app:
             - name: pull-secret-wandelbots-azurecr-io
     port: 3000
     resources:
-        memory-limit: 4Gi
+        memory-limit: 3Gi
