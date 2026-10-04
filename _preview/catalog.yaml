@@ -29,4 +29,4 @@ entries:
     - name: stacking-demo-nodejs
       version: 1.0.0
     - name: usd-viewer
-      version: 0.2.6
+      version: 0.6.0
