@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://catalog.wandelbots.io/schema.json
+---
+version: 0.1.0
+name: usd-viewer
+novaOsVersion: ">= 26.6"
+supportsCloud: true
+beta: true
+description: |
+    Open an OpenUSD scene - a USD file, a zip of a collected scene or a scene
+    on an Omniverse Nucleus server - and watch the cell's robots move in it,
+    live. Robots the scene names are connected to their motion groups; any
+    other can be connected by hand. Shows what NOVA knows about the cell too:
+    safety zones, the robots' collision and safety volumes, and the stored
+    collision worlds with their tool on the flange. Large scenes stream in
+    with levels of detail; RTX/MDL materials become PBR (metal, roughness,
+    normal maps, glass); Gaussian-splat scans (NuRec) are drawn among the
+    meshes. URDF files open as robots too.
+    NOTE: This preview app is experimental and only available Wandelbots internal.
+homepage: https://code.wabo.run/ai/physical-ai/usd-viewer
+app:
+    name: usd-viewer
+    appIcon: app_icon.svg
+    healthPath: healthz
+    containerImage:
+        image: wandelbots.azurecr.io/nova-apps/usd-viewer:0.1.0
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 3000
+    resources:
+        memory-limit: 4Gi
