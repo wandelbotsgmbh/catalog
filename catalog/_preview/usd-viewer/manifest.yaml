@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://catalog.wandelbots.io/schema.json
 ---
-version: 0.8.1
+version: 0.14.0
 name: usd-viewer
 novaOsVersion: ">= 26.6"
 supportsCloud: true
@@ -22,7 +22,7 @@ app:
     appIcon: app_icon.svg
     healthPath: healthz
     containerImage:
-        image: wandelbots.azurecr.io/nova-apps/usd-viewer:0.8.1
+        image: wandelbots.azurecr.io/nova-apps/usd-viewer:0.14.0
         secrets:
             - name: pull-secret-wandelbots-azurecr-io
     port: 3000
