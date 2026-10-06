@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://catalog.wandelbots.io/schema.json
 ---
-version: 0.3.7
+version: 0.3.8
 name: cartograph
 novaOsVersion: ">= 25.3"
 supportsCloud: true
@@ -15,7 +15,7 @@ app:
     appIcon: icon.png
     healthPath: healthz
     containerImage:
-        image: wandelbots.azurecr.io/nova-apps/cartograph:0.3.7
+        image: wandelbots.azurecr.io/nova-apps/cartograph:0.3.8
         secrets:
             - name: pull-secret-wandelbots-azurecr-io
     port: 3000
