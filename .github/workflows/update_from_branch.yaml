@@ -1,6 +1,7 @@
 ---
 # Apps that push their own catalog update instead of sending a dispatch:
-# their CI (with a deploy key) pushes a branch `update/<entry>-<version>`
+# their CI (with a deploy key) pushes a branch `update/<entry>-<version>`,
+# or one `update/<entry>` it pushes again for every version,
 # whose only change is that entry's manifest.yaml, under catalog/ or
 # catalog/_preview/. This opens the pull request for it and lets it merge
 # once the checks pass, as update_catalog.yaml does for dispatches.
@@ -65,20 +66,29 @@ jobs:
           fi
 
       - name: Open the pull request and merge it when the checks pass
+        id: pr
         env:
           GH_TOKEN: ${{ secrets.PAT_FOR_UPDATE_ACTION }}
           BRANCH: ${{ github.ref_name }}
         run: |
           title=$(git log -1 --format=%s)
-          if ! gh pr view "$BRANCH" --json number > /dev/null 2>&1; then
-            gh pr create --head "$BRANCH" --base main --title "$title" \
-              --body "Automated update pushed by the entry's own CI."
+          # Only an open pull request counts: a branch name that is pushed
+          # again (update/<entry>) also has its closed and merged ones, and
+          # `gh pr view <branch>` would pick one of those.
+          number=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
+          if [ -z "$number" ]; then
+            url=$(gh pr create --head "$BRANCH" --base main --title "$title" \
+              --body "Automated update pushed by the entry's own CI.")
+            number=${url##*/}
+          else
+            gh pr edit "$number" --title "$title"
           fi
-          gh pr merge "$BRANCH" --squash --auto --delete-branch
+          echo "number=$number" >> "$GITHUB_OUTPUT"
+          gh pr merge "$number" --squash --auto --delete-branch
 
       - name: Approve a plain version bump
         if: steps.bump.outputs.plain == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
-          BRANCH: ${{ github.ref_name }}
-        run: gh pr review "$BRANCH" --approve --body "Only the version and its image tag changed."
+          NUMBER: ${{ steps.pr.outputs.number }}
+        run: gh pr review "$NUMBER" --approve --body "Only the version and its image tag changed."
