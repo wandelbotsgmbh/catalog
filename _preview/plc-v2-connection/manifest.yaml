@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://catalog.wandelbots.io/schema.json
+---
+# The folder name, this name and app.name must all be "plc-v2-connection":
+# the NOVA app store finds the installed app by the folder name.
+version: 0.11.0
+name: plc-v2-connection
+novaOsVersion: ">= 26.7"
+supportsCloud: false
+beta: true
+description: |
+    Add and remove the PROFINET PLC of a cell. The app adds the PLC with a
+    network interface of the instance (macvlan or SR-IOV port), its device
+    name, IP address and MAC address, and shows the state of the PLC
+    (running, connecting, failing) live over NATS. Before a removal, it names
+    the signals that the removal deletes.
+    NOTE: This preview app is experimental and only available Wandelbots internal.
+homepage: https://code.wabo.run/gabor.schulze/PLC-MCVLAN-APP
+app:
+    name: plc-v2-connection
+    appIcon: app_icon.png
+    containerImage:
+        image: wandelbots.azurecr.io/nova-apps/plc-v2-connection:0.11.0
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 8000
