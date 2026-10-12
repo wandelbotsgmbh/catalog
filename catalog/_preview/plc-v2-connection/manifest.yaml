@@ -4,7 +4,7 @@
 # the NOVA app store finds the installed app by the folder name.
 version: 0.11.0
 name: plc-v2-connection
-novaOsVersion: ">= 26.8"
+novaOsVersion: ">= 26.7"
 supportsCloud: false
 beta: true
 description: |
