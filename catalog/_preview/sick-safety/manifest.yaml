@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://catalog.wandelbots.io/schema.json
+---
+# The folder name, this name and app.name must all be "sick-safety":
+# the NOVA app store finds the installed app by the folder name.
+version: 0.1.3
+name: sick-safety
+novaOsVersion: ">= 26.8"
+supportsCloud: false
+beta: true
+description: |
+    Runs SICK's nanoScan3 safety scanners and Flexi Soft case switching for the
+    mobile robots of a cell. For every robot that publishes laser scans and
+    wheel feedback on NATS, the app picks the monitoring case from the speed,
+    evaluates the safety and warning fields on each scan, and publishes the
+    OSSD state and the active field outlines on
+    nova.v2.cells.<cell>.robots.<robot>.safety.state and .safety.fields.
+    Scanner configurations (.sgexml) can be replaced by uploading them to the
+    cell's object store. The app has no UI.
+    NOTE: This preview app is experimental and only available Wandelbots internal.
+homepage: https://github.com/wb-int/sick-integration
+app:
+    name: sick-safety
+    appIcon: ../controlplane/static/hiddenapp.png
+    healthPath: healthz
+    containerImage:
+        image: wandelbots.azurecr.io/nova-apps/sick-safety:0.1.3
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 8080
