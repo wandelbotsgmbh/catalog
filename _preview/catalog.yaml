@@ -28,6 +28,8 @@ entries:
       version: 1.10.1-auth0-3
     - name: plc-v2-connection
       version: 0.11.0
+    - name: sick-safety
+      version: 0.1.3
     - name: stacking-demo-nodejs
       version: 1.0.0
     - name: usd-viewer
