@@ -6,15 +6,15 @@ novaOsVersion: ">= 26.7"
 supportsCloud: true
 beta: true
 description: |
-  Teach and edit poses, jog robots and run programs in the browser.
-  The Robot Interface as a standalone NOVA app: 3D robot view, poses/frames
-  tree, jogging, routines and dataset loading.
+    Teach and edit poses, jog robots and run programs in the browser.
+    The Robot Interface as a standalone NOVA app: 3D robot view, poses/frames
+    tree, jogging, routines and dataset loading.
 homepage: https://github.com/wandelbotsgmbh
 app:
-  name: teaching
-  appIcon: icon.png
-  containerImage:
-    image: wandelbots.azurecr.io/nova-apps/teaching:0.1.0
-    secrets:
-      - name: pull-secret-wandelbots-azurecr-io
-  port: 3000
+    name: teaching
+    appIcon: icon.png
+    containerImage:
+        image: wandelbots.azurecr.io/nova-apps/teaching:0.1.0
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 3000
