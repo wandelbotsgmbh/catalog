@@ -24,7 +24,7 @@ entries:
       version: 0.6.0
       beta: true
     - name: visual-studio-code
-      version: 0.1.2
+      version: 0.2.0
       beta: true
     - name: waypoints
       version: 0.36.0
