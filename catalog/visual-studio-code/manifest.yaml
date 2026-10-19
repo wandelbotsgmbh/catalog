@@ -20,4 +20,4 @@ app:
         mountPath: /config/workspace
         capacity: 500Mi
     resources:
-        memory-limit: 3000Mi
+        memory-limit: 4000Mi
