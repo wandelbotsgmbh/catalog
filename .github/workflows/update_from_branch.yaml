@@ -70,9 +70,16 @@ jobs:
           BRANCH: ${{ github.ref_name }}
         run: |
           title=$(git log -1 --format=%s)
-          if ! gh pr view "$BRANCH" --json number > /dev/null 2>&1; then
+          # Only an OPEN pull request counts: `gh pr view <branch>` also finds
+          # a merged one, and an entry that reuses its update branch would
+          # then get no pull request for its next version.
+          open=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')
+          if [ -z "$open" ]; then
             gh pr create --head "$BRANCH" --base main --title "$title" \
               --body "Automated update pushed by the entry's own CI."
+          else
+            # A newer version pushed onto an open pull request: say so in its title.
+            gh pr edit "$open" --title "$title"
           fi
           gh pr merge "$BRANCH" --squash --auto --delete-branch
 
