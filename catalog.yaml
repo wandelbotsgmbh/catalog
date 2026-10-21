@@ -18,7 +18,7 @@ entries:
     - name: sensopart-visor
       version: 0.2.0
     - name: teaching
-      version: 4.1.0
+      version: 4.2.0
       beta: true
     - name: trajectory-cursor
       version: 0.6.0

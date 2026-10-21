@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://wandelbotsgmbh.github.io/catalog/schema.json
 ---
-version: 4.1.0
+version: 4.2.0
 name: Teaching (Beta)
 novaOsVersion: ">= 26.7"
 supportsCloud: true
@@ -14,7 +14,7 @@ app:
     name: teaching
     appIcon: icon.png
     containerImage:
-        image: wandelbots.azurecr.io/nova-apps/teaching:4.1.0
+        image: wandelbots.azurecr.io/nova-apps/teaching:4.2.0
         secrets:
             - name: pull-secret-wandelbots-azurecr-io
     port: 3000
