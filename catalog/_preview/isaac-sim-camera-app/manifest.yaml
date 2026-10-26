@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=https://catalog.wandelbots.io/schema.json
+---
+version: 0.2.0
+name: isaac-sim-camera-app
+novaOsVersion: ">= 25.3"
+supportsCloud: false
+beta: true
+description: |
+    Simulated cameras for NOVA: exposes the camera prims of a running Isaac
+    Sim stage as contract cameras of the camera REST contract
+    (camera-framework). Each prim serves color, mono, depth, an organised
+    point cloud and a lens calibration, rendered fresh by Isaac Sim for every
+    request, plus a WebRTC live view from the streamer extension inside Isaac
+    Sim. Vision pipelines and calibration tools written against the contract
+    work with simulated cameras exactly as with physical ones.
+    Needs an Isaac Sim host with the wandelbots.omni extension (>= 2.73.0 for
+    depth); set the host in the app's Isaac Sim panel.
+    NOTE: This preview app is experimental and only available Wandelbots internal.
+homepage: https://github.com/wandelbotsgmbh/isaac-sim-camera-app
+app:
+    name: isaac-sim-camera-app
+    appIcon: app_icon.png
+    environment:
+        - name: OMNIVERSE_API
+          value: ""
+        - name: ISAAC_SIM_CONFIG
+          value: configs/isaacsim.toml
+        - name: ISAAC_SIM_SETTINGS_FILE
+          value: /data/isaac_sim_settings.json
+        - name: CALIBRATION_STORE_DIR
+          value: /data/calibration
+        - name: TRUSTED_PROXIES
+          value: ""
+    containerImage:
+        image: wandelbots.azurecr.io/nova-apps/isaac-sim-camera-app:0.2.0
+        secrets:
+            - name: pull-secret-wandelbots-azurecr-io
+    port: 3000
+    storage:
+        mountPath: /data
+        capacity: 100Mi
