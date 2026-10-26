@@ -38,4 +38,4 @@ app:
     port: 3000
     storage:
         mountPath: /data
-        capacity: 100Mi
+        capacity: 10Mi
