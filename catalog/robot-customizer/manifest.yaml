@@ -11,7 +11,7 @@ description: |
 homepage: https://code.wabo.run/robotics/robot-customizer
 app:
   name: robot-customizer
-  appIcon: icon.png
+  appIcon: img/tune.svg
   containerImage:
     image: wandelbots.azurecr.io/nova-apps/robot-customizer:0.10.0
     secrets:
