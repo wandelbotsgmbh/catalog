@@ -5,7 +5,7 @@ entries:
     - name: camera-calibration
       version: 1.28.1
     - name: cameras
-      version: 1.11.1
+      version: 1.12.0
     - name: cartograph
       version: 0.15.0
     - name: collision-world-editor
