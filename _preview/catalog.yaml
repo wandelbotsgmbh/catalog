@@ -3,7 +3,7 @@ schemaVersion: 0.0.1
 version: 0.0.1
 entries:
     - name: camera-calibration
-      version: 1.29.0
+      version: 2.0.0
     - name: cameras
       version: 1.12.0
     - name: cartograph
