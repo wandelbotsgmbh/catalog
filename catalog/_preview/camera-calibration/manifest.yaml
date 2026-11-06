@@ -22,6 +22,8 @@ app:
         secrets:
             - name: pull-secret-wandelbots-azurecr-io
     port: 7860
+    resources:
+        memory-limit: 2Gi
     storage:
         mountPath: /app/data
         capacity: 300Mi
