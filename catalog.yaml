@@ -30,4 +30,4 @@ entries:
       version: 0.36.0
       beta: true
     - name: zivid-intel
-      version: 2.3.0
+      version: 2.4.2
